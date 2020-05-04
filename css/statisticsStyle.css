@@ -126,3 +126,22 @@
       white-space:nowrap;
     }
 
+
+    .containerSelect{
+      margin:30px;
+      font-family: Chunk Five Print;
+      padding:10px;
+    }
+    select{
+      font-family: Chunk Five Print;
+      color: grey;
+      padding: 10px;
+      text-align: center;
+    }
+    option{
+      padding:10px;
+    }
+    label{
+      margin-left: 20px;
+    }
+

@@ -7,6 +7,7 @@
     <link href="../css/modalStyle.css" rel="stylesheet">
     <link href="../css/statisticsStyle.css" rel="stylesheet">
     <script src="../js/charts.js"></script>
+    <script src="../js/filterButton.js"></script>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,56 +54,88 @@
             <div class="middleContainer">
               <div class="textMiddle"> STATISTICS</div>    
             </div> 
-    
         </div>
+        <br>
+        <br>
+       
+<div class="containerSelect">
+        <label for="chart-select">Chart:</label>
+
+<select name="charts" id="chart-select">
+    <option value="">--Please choose an option--</option>
+    <option value="line">Line chart</option>
+    <option value="pie">Pie chart</option>
+    <option value="column">Column chart</option>
+    <option value="pie2">Pie chart 2</option>
+    <option value="bar">Bar Chart</option>
+
+</select>
+
+<label for="game-select">Game:</label>
+
+<select name="game" id="game-select">
+    <option value="">--Please choose an option--</option>
+    <option value="board">Board Games</option>
+    <option value="online">Online Games</option>
+
+</select>
+
+<label for="type-select">Type:</label>
+
+<select name="types" id="type-select">
+    <option value="">--Please choose an option--</option>
+    <option value="action">Action</option>
+    <option value="adventure">Adventure</option>
+    <option value="biology">Biology</option>
+    <option value="horrror">Horror</option>
+    <option value="strategy">Strategy</option>
+
+
+
+</select>
+</div>
+
+
+        
 
         <div id="chartContainer1" style="height: 370px; width: 100%;"></div>
         <div id="chartContainer2" style="height: 370px; width: 100%;"></div>
         <div id="chartContainer3" style="height: 370px; width: 100%;"></div>
 
-
-
-    <div class="row">
-        <div class="column">
-        <h2 class="title" style="text-align:center;">PIE CHART</h2>
-
-        <div class="pie">
-            <div class="pieSegment" style="--offset:0; --value:25; --bg:#db0a5b;"></div> 
-            <div class="pieSegment" style="--offset:25; --value:10; --bg: #22a7f0;"></div> 
-            <div class="pieSegment" style="--offset:35; --value:60; --bg: #2ecc71;--over50: 1;"></div> 
-            <div class="pieSegment" style="--offset:95; --value:5; --bg:#4d05e8;"></div>       
+        <div class="row">
+            <div class="column">
+            <h2 class="title" style="text-align:center;">PIE CHART</h2>
+    
+            <div class="pie">
+                <div class="pieSegment" style="--offset:0; --value:25; --bg:#db0a5b;"></div> 
+                <div class="pieSegment" style="--offset:25; --value:10; --bg: #22a7f0;"></div> 
+                <div class="pieSegment" style="--offset:35; --value:60; --bg: #2ecc71;--over50: 1;"></div> 
+                <div class="pieSegment" style="--offset:95; --value:5; --bg:#4d05e8;"></div>       
+            </div>
+            <div class="descriere" style="color:#db0a5b;">Biology: 25%</div>
+            <div class="descriere" style="color:#22a7f0;">Educational: 10%</div>
+            <div class="descriere" style="color:#2ecc71;">Historical: 60%</div>
+            <div class="descriere" style="color:#4d05e8;">Horror: 5%</div>
         </div>
-        <div class="descriere" style="color:#db0a5b;">Biology: 25%</div>
-        <div class="descriere" style="color:#22a7f0;">Educational: 10%</div>
-        <div class="descriere" style="color:#2ecc71;">Historical: 60%</div>
-        <div class="descriere" style="color:#4d05e8;">Horror: 5%</div>
-    </div>
-    </div>
-
-<br>
-<br>
-    <div class="chart-wrap vertical">
-        <h2 class="title" style="text-align:center;">BAR CHART</h2>
-        
-        <div class="grid">
-            <div class="bar" style="--bar-value:85%;" data-name="Biology" title="Biology 85%"></div>
-            <div class="bar" style="--bar-value:23%;" data-name="Educational" title="Educational 23%"></div>
-           <div class="bar" style="--bar-value:7%;" data-name="Fantasy" title="Fantasy 7%"></div>
-            <div class="bar" style="--bar-value:38%;" data-name="Historical" title="Historical 38%"></div>
-            <div class="bar" style="--bar-value:35%;" data-name="Horrror" title="Horror 35%"></div>   
         </div>
-      </div>
+    
+    <br>
+    <br>
+        <div class="chart-wrap vertical">
+            <h2 class="title" style="text-align:center;">BAR CHART</h2>
+            
+            <div class="grid">
+                <div class="bar" style="--bar-value:85%;" data-name="Biology" title="Biology 85%"></div>
+                <div class="bar" style="--bar-value:23%;" data-name="Educational" title="Educational 23%"></div>
+               <div class="bar" style="--bar-value:7%;" data-name="Fantasy" title="Fantasy 7%"></div>
+                <div class="bar" style="--bar-value:38%;" data-name="Historical" title="Historical 38%"></div>
+                <div class="bar" style="--bar-value:35%;" data-name="Horrror" title="Horror 35%"></div>   
+            </div>
+          </div>
 
-      <br>
-      <br>
-      
+       
 
-      <div id="chartContainer1" style="width: 45%; height: 300px;display: inline-block;"></div> 
-<div id="chartContainer2" style="width: 45%; height: 300px;display: inline-block;"></div><br/>
-<div id="chartContainer3" style="width: 45%; height: 300px;display: inline-block;"></div>
-<div id="chartContainer4" style="width: 45%; height: 300px;display: inline-block;"></div>
-
-
+             
       
 </body>
 
