@@ -1,0 +1,62 @@
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .row img{
+    width:100%;
+  }
+  
+  .desc {
+    padding: 15px;
+    text-align: center;
+    font-family: Chunk Five Print;
+    color:  #7a7a52;
+    
+  }
+
+  
+  @font-face { font-family: Family-Guy; src: url('../fonts/Family-Guy.TTF'); } 
+  
+  @font-face { font-family: Multicolore-Regular; src: url('../fonts/Multicolore-Regular.TTF'); } 
+
+  @font-face { font-family:  Chunk Five Print; src: url('../fonts/Chunk Five Print.otf'); } 
+
+ 
+
+  p.titleGame{
+    font-size: 60px;
+    font-family: Family-Guy;
+    color: slategray;
+    text-align:center;
+
+  }
+  .descriere{
+    padding: 5px;
+    font-family: Chunk Five Print;
+    font-size: 15px;
+    color:#4d4d33;
+
+  }
+ 
+p.subTitleGame
+{
+  padding: 5px;
+  border-bottom:  1px;
+  font-size: 30px;
+  font-family: Family-Guy;
+  text-align:center;
+}
+ 

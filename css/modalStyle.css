@@ -1,0 +1,73 @@
+/*for the information modal inspired by https://codepen.io/peiche/pen/vhqym*/
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+  	left: 0;
+    right: 0;
+    height:300%;
+  	background: rgba(0,0,0,0.5);
+	transition: opacity 200ms;
+  	visibility: hidden;
+	opacity: 1;
+}
+
+.overlay:target {
+	visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+  top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+	padding: 20px;
+	background: #fff;
+	border: 1px solid #000;
+	width: 55%;
+	box-shadow: 0 0 50px rgba(0,0,0,0.5);
+	position: absolute;
+    
+    
+}
+
+.content {
+	font-size: 18px;
+}
+
+.button {
+	font-family: Family-Guy;
+	font-size: 20px;
+	padding: 5px 10px;
+	background-color: white;
+	border-radius: 2px;
+	color:slategray;
+	text-decoration: none;
+	text-shadow: 1px 1px 1px #fff;
+	cursor: pointer;
+	transition: all 0.2s ease-out;
+}
+
+
+.close {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 20px;
+    right: 20px;
+    opacity: 0.8;
+    transition: all 200ms;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #666;
+}
+
+    .close:hover {
+      opacity: 1;
+	}
+	
+	
+	
+	  

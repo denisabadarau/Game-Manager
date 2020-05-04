@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+    <html lang="en">
+  <head>
+    <link href="../css/meniuStyle.css" rel="stylesheet">
+    <link href="../css/boardGamesStyle.css" rel="stylesheet">
+    <link href="../css/paginaJocuriStyle.css" rel="stylesheet">
+    <link href="../css/modalStyle.css" rel="stylesheet">
+    <link href="../css/statisticsStyle.css" rel="stylesheet">
+    <script src="../js/charts.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title> My page </title>
+</head>
+<body>
+    <div class="split left">
+    </div>
+    <div class="split right">
+    </div>
+    <a href="meniu.html"> <img src="../images/logomainalb.png"  style="width:300px;height:100px;margin-left:370px;"> </a>
+        <p class="title">-Game Manager-</p>
+        <ul>
+            <li><a href="meniu.html">Home</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">BoardGames</a>
+                <div class="dropdown-content">
+                    <a href="biology.html">Biology</a>
+                    <a href="educational.html">Educational</a>
+                    <a href="fantasy.html">Fantasy</a>
+                    <a href="historical.html">Historical</a>
+                    <a href="horror.html">Horror</a>
+
+                </div>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">OnlineGames</a>
+                    <div class="dropdown-content">
+                        <a href="action.html">Action</a>
+                        <a href="adventure.html">Adventure</a>
+                        <a href="animal.html">Animal</a>
+                        <a href="sport.html">Sport</a>
+                        <a href="strategy.html">Strategy</a>
+                        <a href="vehicles.html">vehicles</a>
+                    </div>
+                    <li><a href="statistics.html">Statistics</a></li>
+                    <li><a href="battles.html">Battles</a></li>
+                    <li><a href="top.html">Top</a></li>
+            </li>
+        </ul>
+
+        <div class="container">
+            <img class="topImage" src="../images/blueEye.jpg">
+            <div class="middleContainer">
+              <div class="textMiddle"> STATISTICS</div>    
+            </div> 
+    
+        </div>
+
+        <div id="chartContainer1" style="height: 370px; width: 100%;"></div>
+        <div id="chartContainer2" style="height: 370px; width: 100%;"></div>
+        <div id="chartContainer3" style="height: 370px; width: 100%;"></div>
+
+
+
+    <div class="row">
+        <div class="column">
+        <h2 class="title" style="text-align:center;">PIE CHART</h2>
+
+        <div class="pie">
+            <div class="pieSegment" style="--offset:0; --value:25; --bg:#db0a5b;"></div> 
+            <div class="pieSegment" style="--offset:25; --value:10; --bg: #22a7f0;"></div> 
+            <div class="pieSegment" style="--offset:35; --value:60; --bg: #2ecc71;--over50: 1;"></div> 
+            <div class="pieSegment" style="--offset:95; --value:5; --bg:#4d05e8;"></div>       
+        </div>
+        <div class="descriere" style="color:#db0a5b;">Biology: 25%</div>
+        <div class="descriere" style="color:#22a7f0;">Educational: 10%</div>
+        <div class="descriere" style="color:#2ecc71;">Historical: 60%</div>
+        <div class="descriere" style="color:#4d05e8;">Horror: 5%</div>
+    </div>
+    </div>
+
+<br>
+<br>
+    <div class="chart-wrap vertical">
+        <h2 class="title" style="text-align:center;">BAR CHART</h2>
+        
+        <div class="grid">
+            <div class="bar" style="--bar-value:85%;" data-name="Biology" title="Biology 85%"></div>
+            <div class="bar" style="--bar-value:23%;" data-name="Educational" title="Educational 23%"></div>
+           <div class="bar" style="--bar-value:7%;" data-name="Fantasy" title="Fantasy 7%"></div>
+            <div class="bar" style="--bar-value:38%;" data-name="Historical" title="Historical 38%"></div>
+            <div class="bar" style="--bar-value:35%;" data-name="Horrror" title="Horror 35%"></div>   
+        </div>
+      </div>
+
+      <br>
+      <br>
+      
+
+      <div id="chartContainer1" style="width: 45%; height: 300px;display: inline-block;"></div> 
+<div id="chartContainer2" style="width: 45%; height: 300px;display: inline-block;"></div><br/>
+<div id="chartContainer3" style="width: 45%; height: 300px;display: inline-block;"></div>
+<div id="chartContainer4" style="width: 45%; height: 300px;display: inline-block;"></div>
+
+
+      
+</body>
+
+    </html>

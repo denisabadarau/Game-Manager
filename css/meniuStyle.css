@@ -1,0 +1,130 @@
+  /* Acest style este pentru impartirea ecranului in 3
+    in mijloc fiind unde codam
+    */
+    .split {
+        height: 100%;
+        width: 15%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        overflow-x: hidden;
+        padding-top: 20px;
+    }
+    .left {
+        left: 0;
+        background-color: slategray;
+    }
+    .right {
+        right: 0;
+        background-color: slategrey;
+    }
+
+        /*Acest style este pentru meniul principa/*/
+       
+        ul {
+            list-style-type: none;
+            overflow: hidden;
+            background-color: #333;
+        }
+        li {
+            float: left;
+            margin: 0 1.15em;
+        }
+        li a,
+        .dropbtn {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            font-family: Family-Guy;
+            padding: 20px 20px 20px 20px;
+            text-decoration: none;
+        }
+        li a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: black;
+        }
+        li.dropdown {
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: white;
+            display: block;
+            text-align: center;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            color:black;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        p.title {
+            font-family: Family-Guy;
+            font-size: 20px;
+            text-align: center;
+            color: grey
+        }
+        h1 {
+            font-family: Gentium, Book, Basic;
+            font-size: 18px;
+            text-align: left;
+            color: black
+        }
+        h1.mod1 {
+            margin-left: 17%;
+            margin-right: 17%;
+            margin-top: 3%;
+        }
+        h1.mod2{
+            margin-left: 17%;
+            margin-right: 17%;
+            margin-top: 1%;
+        }
+        hr.linie {
+            border-top: 1px solid grey;
+            margin-top: 3%;
+        }
+    
+        .fa {
+            padding: 8px;
+            font-size: 30px;
+            width: 20px;
+            height:20px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            }
+            .fa:hover {
+            opacity: 0.7;
+            }
+            .fa-facebook {
+            background: #3B5998;
+            color: white;
+            margin-left: 50%;
+            margin-top: 5%
+            }
+            .fa-twitter {
+            background: #55ACEE;
+            color: white;
+            }
+            .fa-google {
+            background: #dd4b39;
+            color: white;
+            }
+            .fa-instagram {
+            background: #125688;
+            color: white;
+            }
+            .fa-youtube {
+            background: #bb0000;
+            color: white;
+            }

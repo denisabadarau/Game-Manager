@@ -1,0 +1,79 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url(pozas.jpg);
+    font-family: sans-serif;
+    background-size: cover;
+    background-position:center top;
+}
+.signIn-box {
+    width: 320px;
+    height: 420px;
+    background: rgb(2, 2, 2);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    width: 350px;
+    height: 500px;
+    padding: 70px 30px;
+
+}
+
+.logo{
+    width: 70px;
+    height: 70px;
+    border: 90%;
+    position: fixed;
+    top: -4px;
+    left: 130px;
+
+}
+
+h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+    color: #b0b4b4;
+}
+
+.signIn-box p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.signIn-box a{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #878888;
+}
+
+.signIn-box input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.signIn-box input[type = "text"], input[type = "password"], input[type = "password"], input[type="text"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.signIn-box input[type = "submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #5d6162;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
