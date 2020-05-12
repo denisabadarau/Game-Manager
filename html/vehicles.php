@@ -1,3 +1,6 @@
+<?php
+include '../php/conectare.php';
+?>
 <!DOCTYPE html>
     <html lang="en">
   <head>
@@ -31,11 +34,11 @@
                 <li class="dropdown">
                     <a href="javascript:void(0)" class="dropbtn">OnlineGames</a>
                     <div class="dropdown-content">
-                        <a href="action.html">Action</a>
-                        <a href="adventure.html">Adventure</a>
-                        <a href="animal.html">Animal</a>
-                        <a href="sport.html">Sport</a>
-                        <a href="strategy.html">Strategy</a>
+                    <a href="action.php">Action</a>
+                      <a href="adventure.php">Adventure</a>
+                      <a href="sport.php">Sport</a>
+                      <a href="strategy.php">Strategy</a>
+                      <a href="vehicles.php">vehicles</a>
                     </div>
                     <li><a href="statistics.html">Statistics</a></li>
                     <li><a href="battles.html">Battles</a></li>
@@ -46,7 +49,7 @@
       <div class="container">
         <img class="topImage" src="../images/blueEye.jpg">
         <div class="middleContainer">
-          <div class="textMiddle"> ACTION</div>    
+          <div class="textMiddle"> VEHICLES</div>    
         </div> 
 
     </div>
@@ -59,17 +62,42 @@
 
 
     <div class="row">
-        <div class="column">
-              <img src="../images/og26.jpg" >
-            <div class="desc"><b>SPACE LORD</b> <br></br>This article is about the arcade game. For the short story collection, see Space Lords
-            <p><a class="button" href="#popup1">MORE INFO</a></p>
-            </div>
-          </div>
-     
           <div class="column">
               <img src="../images/og27.jpg" >
             <div class="desc"><b>NASCAR</b> <br></br>
               <p><a class="button" href="#popup3">MORE INFO</a></p>
+              <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='52'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="52">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="10">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="52">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="10">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='52'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
             </div>
                 </div>
   
@@ -77,28 +105,158 @@
         <img src="../images/28.jpg"   >
         <div class="desc"><b>10,000 BULETS</b> <br></br>10,000 Bullets, known in Japan as Tsukiyo ni Saraba, is an action/third-person shooter video game developed by Blue Moon Studio and published by Taito Corporation for the Sony PlayStation 2 video game console.
           <p><a class="button" href="#popup2">MORE INFO</a></p>
+          <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='53'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="53">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="10">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="53">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="10">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='53'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
         </div>
           </div>
-       
-    
-        </div>
-  
-  <div class="row">
+
           <div class="column">
         <img src="../images/og29.jpg"  >
       <div class="desc"><b>The World of Cars Online</b><br></br> The World of Cars Online was a virtual world based on the Cars film series. The game was under development with Open Beta, which launched on March 1, 2010.
       <p><a class="button" href="#popup4">MORE INFO</a></p>
+      <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='54'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="54">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="10">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="54">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="10">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='54'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
     </div>
           </div>
-  
+        </div>
+
+        <div class="row">
           <div class="column">
-          <img src="../images/og30.jpg"  >
-        <div class="desc"><b>RACING</b><br></br>The racing video game genre is the genre of video games, either in the first-person or third-person perspective
-        <p><a class="button" href="#popup5">MORE INFO</a></p>
+            <img src="../images/og30.jpg"  >
+          <div class="desc"><b>RACING</b><br></br>The racing video game genre is the genre of video games, either in the first-person or third-person perspective
+          <p><a class="button" href="#popup5">MORE INFO</a></p>
+          <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='55'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="55">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="10">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="55">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="10">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='55'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
+              </div>
             </div>
+          <div class="column">
+            <img src="../images/og26.jpg" >
+          <div class="desc"><b>SPACE LORD</b> <br></br>This article is about the arcade game. For the short story collection, see Space Lords
+          <p><a class="button" href="#popup1">MORE INFO</a></p>
+          <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='56'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="56">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="10">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="56">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="10">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='56'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
           </div>
-    
-         
+        </div>
       </div>
   
   <div id="popup1" class="overlay">

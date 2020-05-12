@@ -1,3 +1,6 @@
+<?php
+include '../php/conectare.php';
+?>
 <!DOCTYPE html>
     <html lang="en">
   <head>
@@ -31,12 +34,11 @@
                 <li class="dropdown">
                     <a href="javascript:void(0)" class="dropbtn">OnlineGames</a>
                     <div class="dropdown-content">
-                        <a href="action.html">Action</a>
-                        <a href="adventure.html">Adventure</a>
-                        <a href="animal.html">Animal</a>
-                        <a href="sport.html">Sport</a>
-                        <a href="strategy.html">Strategy</a>
-                        <a href="vehicles.html">vehicles</a>
+                    <a href="action.php">Action</a>
+                      <a href="adventure.php">Adventure</a>
+                      <a href="sport.php">Sport</a>
+                      <a href="strategy.php">Strategy</a>
+                      <a href="vehicles.php">vehicles</a>
                     </div>
                     <li><a href="statistics.html">Statistics</a></li>
                     <li><a href="battles.html">Battles</a></li>
@@ -64,6 +66,38 @@
               <img src="../images/og20.jpg" >
             <div class="desc"><b>FORGE OF EMPIERS</b> <br></br>Forge of Empires is a browser-based strategy game developed by InnoGames.
             <p><a class="button" href="#popup1">MORE INFO</a></p>
+            <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='46'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="46">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="9">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="46">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="9">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='46'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
             </div>
           </div>
      
@@ -71,6 +105,38 @@
               <img src="../images/og21.jpg" >
             <div class="desc"><b>GREOPOLIS</b> <br></br>Grepolis can be considered a 4X browser game. It requires a player to Exploit resources, Expand their cities, Explore the oceans, and to Exterminate opposition.
               <p><a class="button" href="#popup3">MORE INFO</a></p>
+              <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='47'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="47">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="9">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="47">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="9">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='47'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
             </div>
                 </div>
   
@@ -78,6 +144,38 @@
         <img src="../images/og22.jpg"   >
         <div class="desc"><b>TRIBAL WARS</b> <br></br>Tribal Wars is a browser-based game set in the Middle Ages. Every player controls a small village, striving for power and glory.
           <p><a class="button" href="#popup2">MORE INFO</a></p>
+          <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='48'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="48">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="9">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="48">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="9">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='48'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
         </div>
           </div>
        
@@ -90,6 +188,38 @@
       <div class="desc"><b>THE WEST</b><br></br> Are you ready to help in the colonisation of the Wild West? Follow in the footsteps of Jesse James, Wyatt Earp, Doc Holliday, and other Western legends? 
         Then join us in a unique adventure into the world of the Old West.
       <p><a class="button" href="#popup4">MORE INFO</a></p>
+      <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='49'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="49">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="9">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="49">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="9">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='49'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
     </div>
           </div>
   
@@ -100,6 +230,38 @@
            grid and where you can place your first buildings, in order to start
             your city's development.
         <p><a class="button" href="#popup5">MORE INFO</a></p>
+        <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='50'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="50">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="9">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="50">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="9">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='50'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
             </div>
           </div>
     
@@ -107,6 +269,38 @@
         <img src="../images/og25.jpg"  >
       <div class="desc"> <b>TRIVIADOR</b> <br></br> Players take on the role of European countries sending expeditions to find gold and establish colonies. Although the design uses the trappings of board wargames such as a hex map, combat is not a major part of the game
         <p><a class="button" href="#popup6">MORE INFO</a></p>
+        <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='51'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="51">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="9">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="51">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="9">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='51'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
       </div>
   </div>
       </div>

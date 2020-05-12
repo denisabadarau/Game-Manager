@@ -1,3 +1,6 @@
+<?php
+include '../php/conectare.php';
+?>
 <!DOCTYPE html>
     <html lang="en">
   <head>
@@ -31,12 +34,11 @@
                 <li class="dropdown">
                     <a href="javascript:void(0)" class="dropbtn">OnlineGames</a>
                     <div class="dropdown-content">
-                        <a href="action.html">Action</a>
-                        <a href="adventure.html">Adventure</a>
-                        <a href="animal.html">Animal</a>
-                        <a href="sport.html">Sport</a>
-                        <a href="strategy.html">Strategy</a>
-                        <a href="vehicles.html">vehicles</a>
+                    <a href="action.php">Action</a>
+                      <a href="adventure.php">Adventure</a>
+                      <a href="sport.php">Sport</a>
+                      <a href="strategy.php">Strategy</a>
+                      <a href="vehicles.php">vehicles</a>
                     </div>
                     <li><a href="statistics.html">Statistics</a></li>
                     <li><a href="battles.html">Battles</a></li>
@@ -65,6 +67,38 @@
             <div class="desc"><b>Soccer</b> <br></br> In the game, players assume the role of the titular main protagonist who travels 
               across several countries around the world in order to repair the World Cup 
             <p><a class="button" href="#popup1">MORE INFO</a></p>
+            <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='40'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="40">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="8">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="40">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="8">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='40'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
             </div>
           </div>
      
@@ -73,6 +107,38 @@
             <div class="desc"><b>NBA 2k20</b> <br></br>NBA 2K20 is a basketball simulation video game developed by Visual Concepts and published by 2K Sports,
                based on the National Basketball Association
               <p><a class="button" href="#popup3">MORE INFO</a></p>
+              <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='41'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="41">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="8">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="41">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="8">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='41'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
             </div>
                 </div>
   
@@ -81,6 +147,39 @@
         <div class="desc"><b>TennisKids</b> <br></br>The game is a realistic simulation of the sport table tennis, with the main 
           objective to make the opponent fail to hit the ball.
           <p><a class="button" href="#popup2">MORE INFO</a></p>
+          <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='42'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="42">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="8">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="42">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="8">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='42'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
+
         </div>
           </div>
        
@@ -94,6 +193,38 @@
          You can select from a group of fictional fighters: Dynamite Joe - 
          The Miracle Man, Fernando Gomez - The South American Eagle. 
       <p><a class="button" href="#popup4">MORE INFO</a></p>
+      <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='43'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="43">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="8">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="43">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="8">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='43'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
     </div>
           </div>
   
@@ -102,6 +233,38 @@
         <div class="desc"><b>International Karate</b><br></br>International Karate is a fighting game developed and published
            by System 3 for various home computers
         <p><a class="button" href="#popup5">MORE INFO</a></p>
+        <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='44'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="44">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="8">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="44">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="8">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='44'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
             </div>
           </div>
     
@@ -112,6 +275,38 @@
          roll a bowling ball down an alley in an attempt to knock down as
           many of the ten bowling pins as possible.
         <p><a class="button" href="#popup6">MORE INFO</a></p>
+        <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='45'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="45">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="8">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="45">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="8">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='45'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
       </div>
   </div>
       </div>

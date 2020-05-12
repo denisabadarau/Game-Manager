@@ -34,12 +34,11 @@ include '../php/conectare.php';
                 <li class="dropdown">
                     <a href="javascript:void(0)" class="dropbtn">OnlineGames</a>
                     <div class="dropdown-content">
-                        <a href="action.html">Action</a>
-                        <a href="adventure.html">Adventure</a>
-                        <a href="animal.html">Animal</a>
-                        <a href="sport.html">Sport</a>
-                        <a href="strategy.html">Strategy</a>
-                        <a href="vehicles.html">vehicles</a>
+                        <a href="action.php">Action</a>
+                        <a href="adventure.php">Adventure</a>
+                        <a href="sport.php">Sport</a>
+                        <a href="strategy.php">Strategy</a>
+                        <a href="vehicles.php">vehicles</a>
                     </div>
                     <li><a href="statistics.html">Statistics</a></li>
                     <li><a href="battles.html">Battles</a></li>
