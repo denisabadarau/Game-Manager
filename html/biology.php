@@ -1,3 +1,6 @@
+<?php
+include '../php/conectare.php';
+?>
 <!DOCTYPE html>
     <html lang="en">
   <head>
@@ -21,11 +24,11 @@
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">BoardGames</a>
                 <div class="dropdown-content">
-                    <a href="biology.html">Biology</a>
-                    <a href="educational.html">Educational</a>
-                    <a href="fantasy.html">Fantasy</a>
-                    <a href="historical.html">Historical</a>
-                    <a href="horror.html">Horror</a>
+                    <a href="biology.php">Biology</a>
+                    <a href="educational.php">Educational</a>
+                    <a href="fantasy.php">Fantasy</a>
+                    <a href="historical.php">Historical</a>
+                    <a href="horror.php">Horror</a>
 
                 </div>
                 <li class="dropdown">
@@ -63,11 +66,39 @@
       <div class="column">
             <img src="../images/wingspan.png" >
           <div class="desc"><b>Wingspan</b> is a card-driven, medium-weight, engine-building board game in which players compete to attract birds to their wildlife reserves. 
-            <p><a class="button" href="#popup1">MORE INFO</a></p>   
-            <form action="../php/like.php" method="post">
-              <input type="hidden" id="id_game" name="id_game" value="1">
-              <input type="submit" class="button" name="trimite" value="Like">
-          </form> 
+            <p><a class="button" href="#popup1">MORE INFO</a></p>  
+            <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='1'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="1">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="1">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="1">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="1">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru primul joc
+            $sql="SELECT * FROM likes WHERE id_game='1'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
           </div>
         </div>
    
@@ -76,10 +107,39 @@
       <img src="../images/blinded.jpg"   >
       <div class="desc"><b>Blinded by Science</b> is for people who understand the meaning of deoxyribonucleic acid. If you're a trivia buff and science is your thing, then this game is probably in your DNA.
         <p><a class="button" href="#popup2">MORE INFO</a></p>
-        <form action="../php/like.php" method="post">
-          <input type="hidden" id="id_game" name="id_game" value="2">
-          <input type="submit" class="button" name="trimite" value="Like">
-      </form>
+        <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='2'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="2">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="1">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="2">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="1">
+
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='2'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
       </div>
         </div>
      
@@ -87,10 +147,40 @@
       <img src="../images/cytosisjpg.jpg" >
     <div class="desc"><b>Cytosis: A Cell Building</b> Game is a worker placement game that takes place inside a human cell.
       <p><a class="button" href="#popup3">MORE INFO</a></p>
-      <form action="../php/like.php" method="post">
-        <input type="hidden" id="id_game" name="id_game" value="3">
-        <input type="submit" class="button" name="trimite" value="Like">
-    </form>
+      <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='3'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="3">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="1">
+
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="3">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="1">
+
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='3'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
     </div>
         </div>
       </div>
@@ -100,10 +190,40 @@
       <img src="../images/evo1.jpg"  >
     <div class="desc"><b>In Evo</b> you travel the wild open spaces of Kumgath with your mounts, you will use your knowledge of biology to help them adapt and succeed against both the hostile and changing climate and other competing species.
     <p><a class="button" href="#popup4">MORE INFO</a></p>
-    <form action="../php/like.php" method="post">
-      <input type="hidden" id="id_game" name="id_game" value="4">
-      <input type="submit" class="button" name="trimite" value="Like">
-  </form>
+    <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='4'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="4">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="1">
+
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="4">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="1">
+
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='4'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
   </div>
         </div>
 
@@ -111,10 +231,39 @@
         <img src="../images/mads.jpg"  >
       <div class="desc">Throughout the centuries, mad scientists have always encountered the same problem of very limited access to the dangerous resources they require. To solve this problem, the <b>Mad Science Foundation</b> was created. 
       <p><a class="button" href="#popup5">MORE INFO</a></p>
-      <form action="../php/like.php" method="post">
-        <input type="hidden" id="id_game" name="id_game" value="5">
-        <input type="submit" class="button" name="trimite" value="Like">
-    </form>     
+      <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='5'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="5">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="1">
+
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="5">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="1">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='5'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>    
     </div>
         </div>
   
@@ -122,10 +271,39 @@
       <img src="../images/wonderBun.jpg"  >
     <div class="desc">In <b> Wonders of Science</b>, the players take turns rolling the die and asking each other scientific questions from the cards. If a question is answered correctly, the card is won; if answered incorrectly, the card is returned to the bottom of the pile.
       <p><a class="button" href="#popup6">MORE INFO</a></p>
-      <form action="../php/like.php" method="post">
-        <input type="hidden" id="id_game" name="id_game" value="6">
-        <input type="submit" class="button" name="trimite" value="Like">
-    </form>
+      <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='6'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="6">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="1">
+
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="6">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="1">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='6'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
     </div>
 </div>
     </div>

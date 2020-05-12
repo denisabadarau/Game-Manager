@@ -1,3 +1,6 @@
+<?php
+include '../php/conectare.php';
+?>
 <!DOCTYPE html>
     <html lang="en">
   <head>
@@ -20,11 +23,11 @@
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">BoardGames</a>
                 <div class="dropdown-content">
-                    <a href="biology.html">Biology</a>
-                    <a href="educational.html">Educational</a>
-                    <a href="fantasy.html">Fantasy</a>
-                    <a href="historical.html">Historical</a>
-                    <a href="horror.html">Horror</a>
+                <a href="biology.php">Biology</a>
+                    <a href="educational.php">Educational</a>
+                    <a href="fantasy.php">Fantasy</a>
+                    <a href="historical.php">Historical</a>
+                    <a href="horror.php">Horror</a>
 
                 </div>
                 <li class="dropdown">
@@ -57,6 +60,38 @@
           <img src="../images/nycto.jpg" >
         <div class="desc">One of the most unique games , <b>Nyctophobia</b> is a 1vMany game that will have a group of players trying to survive as a maniacal predator chases them in a pitch Black Forest. The catch is that the survivors must play the game wearing blackout sunglasses. 
         <p><a class="button" href="#popup1">MORE INFO</a></p>
+        <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='22'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="22">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="5">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="22">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="5">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='22'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
       </div>
             </div>
 
@@ -64,6 +99,38 @@
               <img src="../images/betrayl.jpg">
             <div class="desc"><b>Betrayal at House on the Hill </b> starts out as a fully cooperative game with players exploring an old mansion. At some point during the game, one of the players becomes a traitor (who or when is unknown at the start) and will turn on their former teammates. The haunts, as they are called, are all fairly unique with each having its own story and goals for both teams.
             <p><a class="button" href="#popup2">MORE INFO</a></p>
+            <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='23'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="23">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="5">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="23">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="5">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='23'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
                 </div>
                       </div>
 
@@ -71,6 +138,38 @@
     <img src="../images/zombicide.jpg"  >
   <div class="desc">If you want to experience hordes of raging undead, then <b>Zombicide</b> is your drink of choice. It’s not higher on the list because I don’t get a huge horror vibe from it. Characters are fairly powerful and it’s really not until late in the game, when rounds are spawning undead in large masses, that the tension finally starts to appear. 
   <p><a class="button" href="#popup3">MORE INFO</a></p>
+  <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='24'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="24">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="5">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="24">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="5">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='24'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
 </div>
       </div>
 
@@ -82,6 +181,38 @@
         <img src="../images/ghosts.jpg" >
       <div class="desc"><b>Ghost </b> takes place on a 6×6 square grid representing a haunted castle. Both players are given eight ghosts, of which four are good (represented by a blue dot) and four are evil (represented by a red dot). The ghosts are assembled in two rows of four ghosts at the player's own edge of the board. At each of the four corners is an exit from the castle.
       <p><a class="button" href="#popup4">MORE INFO</a></p>
+      <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='25'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="25">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="5">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="25">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="5">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='25'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
       </div>
             </div>
 
@@ -89,6 +220,38 @@
         <img src="../images/dead.png">
       <div class="desc"><b>Dead of winter </b> puts players in a small colony of survivors who must work together towards group victory, but at the same time, players must also complete a personal objective to win as individuals. Players often have to decide what’s best for the colony and best for themselves, which creates high-stakes gameplay.
       <p><a class="button" href="#popup5">MORE INFO</a></p>
+      <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='26'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="26">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="5">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="26">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="5">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='26'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
       </div>
             </div>
 
@@ -97,6 +260,38 @@
         <img src="../images/mansions.png">
       <div class="desc"> In <b>Mansions of Madness</b>, players take on the role of investigators trying to get the bottom of strange happenings in the towns of Innsmouth and Arkham. This edition of the game is now fully cooperative, with the Cthulhu Mythos monsters being controlled by an integrated app.  
       <p><a class="button" href="#popup6">MORE INFO</a></p>
+      <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='27'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="27">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="5">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="27">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="5">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru  joc
+            $sql="SELECT * FROM likes WHERE id_game='27'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
       </div>
             </div>
           </div>

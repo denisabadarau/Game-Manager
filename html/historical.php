@@ -1,3 +1,6 @@
+<?php
+include '../php/conectare.php';
+?>
 <!DOCTYPE html>
     <html lang="en">
   <head>
@@ -20,11 +23,11 @@
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">BoardGames</a>
                 <div class="dropdown-content">
-                    <a href="biology.html">Biology</a>
-                    <a href="educational.html">Educational</a>
-                    <a href="fantasy.html">Fantasy</a>
-                    <a href="historical.html">Historical</a>
-                    <a href="horror.html">Horror</a>
+                <a href="biology.php">Biology</a>
+                    <a href="educational.php">Educational</a>
+                    <a href="fantasy.php">Fantasy</a>
+                    <a href="historical.php">Historical</a>
+                    <a href="horror.php">Horror</a>
 
                 </div>
                 <li class="dropdown">
@@ -55,6 +58,38 @@
           <img src="../images/days.jpg" >
         <div class="desc"><b>7 days of Westerplatte</b> is a cooperative game, the players incorporate the roles of Polish commanders who work together to confront the German army and win the game.
         <p><a class="button" href="#popup1">MORE INFO</a></p>
+        <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='16'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="16">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="4">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="16">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="4">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru primul joc
+            $sql="SELECT * FROM likes WHERE id_game='16'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
       </div>
             </div>
 
@@ -62,6 +97,38 @@
     <img src="../images/axis.jpg"  >
   <div class="desc"><b>Axis& Allies</b> depicts WWII on a grand scale, a full global level. Up to five players can play on two different teams.The game comes with masses of plastic miniatures that represent various military units during WWII.
   <p><a class="button" href="#popup2">MORE INFO</a></p>
+  <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='17'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="17">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="4">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="17">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="4">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru primul joc
+            $sql="SELECT * FROM likes WHERE id_game='17'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
         </div>
               </div>
 
@@ -70,6 +137,38 @@
     <img src="../images/lancaster.jpg">
   <div class="desc">In 1413, the new king of England, Henry V of Lancaster, has ambitious plans: The unification of England and the conquest of the French crown! In <b>Lancaster</b>, each player takes the role of an ambitious aristocratic family. Who will be the best supporter of this young king, and the most powerful Lord of his time?
   <p><a class="button" href="#popup3">MORE INFO</a></p>
+  <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='18'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="18">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="4">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="18">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="4">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru primul joc
+            $sql="SELECT * FROM likes WHERE id_game='18'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
 </div>
 </div>
 </div>
@@ -79,6 +178,38 @@
         <img src="../images/carcassone.jpg" >
       <div class="desc"><b>Carcassonne</b> is considered to be an excellent "gateway game" by many board game players as it is a game that can be used to introduce new players to board games. The rules are simple, no one is ever eliminated, and the play is fast. A typical game, without any expansions, takes about 45 minutes to play. There is a substantial luck component to the game; however, good tactics greatly improve one's chances of winning
       <p><a class="button" href="#popup4">MORE INFO</a></p>
+      <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='19'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="19">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="4">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="19">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="4">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru primul joc
+            $sql="SELECT * FROM likes WHERE id_game='19'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
     </div>
           </div>
 
@@ -86,6 +217,38 @@
         <img src="../images/making.jpg">
       <div class="desc"><b>1960: The making of a president </b> achieves perfect pitch between accessibility of game play and empowering the players by allowing them to indulge in making and changing established history in an engaging way.This fast-playing strategy game for two players challenges you to run for the most powerful elective office in the world, at one of its most unique crossroads. Will you recreate history, or rewrite it? 1960: The Making of the President provides you the opportunity to do both.
       <p><a class="button" href="#popup5">MORE INFO</a></p>
+      <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='20'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="20">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="4">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="20">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="4">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru primul joc
+            $sql="SELECT * FROM likes WHERE id_game='20'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
     </div>
   </div>
 
@@ -94,6 +257,38 @@
         <img src="../images/stone.png">
       <div class="desc"> <b>Stone Age </b>is a development game with a Stone Age theme that involves taking control of a tribe to collect resources and build a village that has the most powerful chief.Players collect wood, break stone and wash their gold from the river. They trade freely, expand their village and so achieve new levels of civilization. With a balance of luck and planning, the players compete for food in this prehistoric time. 
       <p><a class="button" href="#popup6">MORE INFO</a></p>
+      <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='21'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="21">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="4">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="21">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="4">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru primul joc
+            $sql="SELECT * FROM likes WHERE id_game='21'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
     </div>
           </div>
         </div>

@@ -1,3 +1,6 @@
+<?php
+include '../php/conectare.php';
+?>
 <!DOCTYPE html>
     <html lang="en">
   <head>
@@ -20,11 +23,11 @@
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">BoardGames</a>
                 <div class="dropdown-content">
-                    <a href="biology.html">Biology</a>
-                    <a href="educational.html">Educational</a>
-                    <a href="fantasy.html">Fantasy</a>
-                    <a href="historical.html">Historical</a>
-                    <a href="horror.html">Horror</a>
+                <a href="biology.php">Biology</a>
+                    <a href="educational.php">Educational</a>
+                    <a href="fantasy.php">Fantasy</a>
+                    <a href="historical.php">Historical</a>
+                    <a href="horror.php">Horror</a>
 
                 </div>
                 <li class="dropdown">
@@ -58,6 +61,38 @@
           <img src="../images/battle.jpg" >
         <div class="desc"><b>Battle Masters</b> is a game that simulates the type of battles as seen in Warhammer Fantasy Battle, but with much simpler game mechanics not based on its parent game. It is focuses on a battle between the forces of good, or The Empire, against the forces of evil, or Chaos, which is a combined army including forces from the Chaos and Orcs and Goblins armies of the Warhammer Fantasy setting including creatures such as Ogres.
           <p><a class="button" href="#popup1">MORE INFO</a></p>
+          <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='11'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="11">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="3">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="11">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="3">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru primul joc
+            $sql="SELECT * FROM likes WHERE id_game='11'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
         </div>
               </div>
       
@@ -66,6 +101,38 @@
             <img src="../images/blood.jpg">
           <div class="desc"><b>Blood Bowl </b> is a fantasy football game populated by traditional fantasy elements such as human warriors, goblins, dwarves, elves, orcs and trolls.Blood Bowl is a two-player, turn-based board game that typically uses 28 mm miniatures to represent a contest between two teams on a playing field. 
             <p><a class="button" href="#popup2">MORE INFO</a></p>
+            <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='12'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="12">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="3">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="12">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="3">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru primul joc
+            $sql="SELECT * FROM likes WHERE id_game='12'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
   </div>
         </div>
 
@@ -74,6 +141,38 @@
         <img src="../images/escape.jpg"  >
       <div class="desc"><b>Escape from Atlantis</b> is a board game that portrays the sinking of Atlantis and the attempts by the population to escape the sinking island.Escape from Atlantis includes four Atlantean tribes, each with twelve villagers. These are represented as small wooden figures, coloured red, blue, green and yellow. Each player picks one tribe.
         <p><a class="button" href="#popup3">MORE INFO</a></p>
+        <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='13'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="13">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="3">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="13">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="3">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru primul joc
+            $sql="SELECT * FROM likes WHERE id_game='13'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
   </div>
         </div>
 
@@ -85,6 +184,38 @@
         <img src="../images/chaos.jpg">
       <div class="desc"> <b>Chaos Marauders</b> is a card-based board game for 2-4 players .The object of the game is to create "battle lines" of orcs and a motley assortment of creatures from the Warhammer universe, including skaven (with their formidable Horned Rat Standard, and "Clan Skyrre Blowback" flamethrower), goblins, dwarf captives, hobgoblins, "crummy snotling slaves", an Orc War Wyvern and the eponymous Chaos Marauders. 
         <p><a class="button" href="#popup4">MORE INFO</a></p>
+        <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='14'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="14">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="3">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="14">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="3">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru primul joc
+            $sql="SELECT * FROM likes WHERE id_game='14'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
   </div>
         </div>
 
@@ -94,6 +225,38 @@
         <img src="../images/dark.jpg" >
       <div class="desc"><b>Dark Tower</b> is a 1981 electronic board game by Milton Bradley Company, for one to four players. The object of the game is to amass an army, collect the three keys to the Tower, and defeat the evil within
         <p><a class="button" href="#popup5">MORE INFO</a></p>
+        <?php
+            $conectare=deschideConexiunea();
+            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='15'";
+            $result=$conectare->query($sql);
+            if(!$result->num_rows){
+              //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
+             echo'
+              <form action="../php/like.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="15">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="3">
+                <input type="submit" class="button" name="trimite" value="Like">
+              </form>
+              ' ;
+            }else{
+              //a dat like, afisez butonul de dislike si trimit datele catre functia dislike
+              echo'
+              <form action="../php/dislike.php" method="post">
+                <input type="hidden" id="id_game" name="id_game" value="15">
+                <input type="hidden" id="id_pagina" name="id_pagina" value="3">
+                <input type="submit" class="button" name="trimite" value="Dislike">
+              </form>
+              ' ;
+            }
+
+            //afisez numarul de like uri pentru primul joc
+            $sql="SELECT * FROM likes WHERE id_game='15'";
+            $result=$conectare->query($sql);
+            echo '
+            <p class ="descriere" style="text-align: center;" ><b> LIKES('. $result->num_rows . ')</b> </p>
+            ';
+
+            ?>
   </div>
         </div>
   </div>
