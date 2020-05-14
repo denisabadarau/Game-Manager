@@ -1,15 +1,13 @@
 <?php
+include 'conectare.php';
+$conectare=deschideConexiunea();
+$id_user="1";
+$id_game='1';
 
-$host='localhost';
-$user='root';
-$pass='';
-$db='testp';
 
-$con=mysqli_connect($host,$user,$pass,$db);
-if($con)
-    echo 's-a conectat cu succes';
-$sql="insert into test(nume,prenume,email) values ('ana','are','mere')";
-$query=mysqli_query($con,$sql);
-if($query)
-    echo 's-a inserat cu succes';
+$sql="SELECT * FROM likes WHERE id_user='2' AND id_game='7'";
+$result=$conectare->query($sql);
+
+echo $result->num_rows;
+echo 'caca';
 ?>

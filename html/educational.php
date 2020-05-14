@@ -51,7 +51,7 @@ include '../php/conectare.php';
                         </div>
                         <li><a href="statistics.html">Statistics</a></li>
                         <li><a href="battles.html">Battles</a></li>
-                        <li><a href="top.html">Top</a></li>
+                        <li><a href="top.php">Top</a></li>
                 </li>
             </ul>
     <div class="container">

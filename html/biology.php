@@ -42,7 +42,7 @@ include '../php/conectare.php';
                     </div>
                     <li><a href="statistics.html">Statistics</a></li>
                     <li><a href="battles.html">Battles</a></li>
-                    <li><a href="top.html">Top</a></li>
+                    <li><a href="top.php">Top</a></li>
             </li>
         </ul>
 
@@ -68,7 +68,7 @@ include '../php/conectare.php';
             <p><a class="button" href="#popup1">MORE INFO</a></p>  
             <?php
             $conectare=deschideConexiunea();
-            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='1'";
+            $sql="SELECT * FROM likes WHERE id_user='2' AND id_game='1'";
             $result=$conectare->query($sql);
             if(!$result->num_rows){
               //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
