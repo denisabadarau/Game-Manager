@@ -1,5 +1,8 @@
 <?php
 include '../php/conectare.php';
+include '../php/view.php';
+//adaug vizualizari  atunci cand un utilizator acceseaza pagina
+addViews('biology');
 ?>
 <!DOCTYPE html>
     <html lang="en">
@@ -65,7 +68,9 @@ include '../php/conectare.php';
       <div class="column">
             <img src="../images/wingspan.png" >
           <div class="desc"><b>Wingspan</b> is a card-driven, medium-weight, engine-building board game in which players compete to attract birds to their wildlife reserves. 
-            <p><a class="button" href="#popup1">MORE INFO</a></p>  
+             <p><a class="button" href="#popup1">MORE INFO</a></p> 
+          
+          </form>  
             <?php
             $conectare=deschideConexiunea();
             $sql="SELECT * FROM likes WHERE id_user='2' AND id_game='1'";
@@ -105,7 +110,8 @@ include '../php/conectare.php';
         <div class="column" >
       <img src="../images/blinded.jpg"   >
       <div class="desc"><b>Blinded by Science</b> is for people who understand the meaning of deoxyribonucleic acid. If you're a trivia buff and science is your thing, then this game is probably in your DNA.
-        <p><a class="button" href="#popup2">MORE INFO</a></p>
+             <p><a class="button" href="#popup2">MORE INFO</a></p> 
+          
         <?php
             $conectare=deschideConexiunea();
             $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='2'";
@@ -312,7 +318,6 @@ include '../php/conectare.php';
       <a class="close" href="#">&times;</a>
       <div class="content">
               <p class="titleGame"> WINGSPAN</p>
-
               <div class="row">
                 <div class="column">
                       <img src="../images/wingspan1.jpg" >
@@ -383,6 +388,7 @@ include '../php/conectare.php';
       <div class="popup">
       <a class="close" href="#">&times;</a>
       <div class="content">
+      
               <p class="titleGame">CYTOSIS</p>
               <div class="row">
                 <div class="column">
@@ -416,6 +422,7 @@ include '../php/conectare.php';
   <div class="popup">
   <a class="close" href="#">&times;</a>
   <div class="content">
+ 
           <p class="titleGame"> EVO</p>
           
           <div class="row">
@@ -455,6 +462,7 @@ include '../php/conectare.php';
   <div class="popup">
   <a class="close" href="#">&times;</a>
   <div class="content">
+  
           <p class="titleGame">MAD SCIENCE FOUNDATION</p>
           <div class="row">
             <div class="column">

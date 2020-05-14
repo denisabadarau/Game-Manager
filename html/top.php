@@ -61,6 +61,19 @@ include '../php/conectare.php';
       <input class="button" type="submit" name="submit" value="Get the top" style="font-size:13px"/>
      </form>
 </div>
+<div class="containerSelect">
+      <form action="#" method="post">
+          <label>TOP AFTER VIEWS: </label>
+        <select name="views">
+          <option value="">--Please choose a category--</option>
+          <option value="Board">Board Game</option>
+          <option value="Online">Online Game</option>
+          <option value="All">All Games</option>
+        </select>
+      <input class="button" type="submit" name="submit2" value="Get the top" style="font-size:13px"/>
+     </form>
+</div>
+
 
      <?php
        if(isset($_POST['submit'])){
@@ -141,8 +154,89 @@ include '../php/conectare.php';
 
 
        }
+      
      ?>
 
+
+<?php
+       if(isset($_POST['submit2'])){
+       $selected_val = $_POST['views'];  // Storing Selected Value In Variable
+       if($selected_val == "All")
+       {
+        //afisez topul pe ambele categorii
+        $conectare=deschideConexiunea();
+        $sql="SELECT DISTINCT(type) FROM games ORDER  BY views desc";
+        $result=$conectare->query($sql);
+        if ($result->num_rows > 0) {
+            $rowNo='1';
+            // output data of each row
+            echo'<p class="title"> TOP FOR ALL CATEGORIES </p>';
+            while($row = $result->fetch_assoc()) {
+              echo 
+              '<p class ="descriere" style="text-align: center;" >'.
+              $rowNo.'. '. $row["type"].'<br>
+              </p>
+              ';
+              $rowNo+=1;
+            }
+          } 
+          else {
+            echo "0 results";
+          }
+        }
+
+        else if($selected_val == "Board")
+       {
+        //afisez topul pe categoria board
+        $conectare=deschideConexiunea();
+        $sql="SELECT DISTINCT(type) FROM games WHERE category='board' ORDER BY views desc ";
+        $result=$conectare->query($sql);
+        if ($result->num_rows > 0) {
+            $rowNo='1';
+            // output data of each row
+            echo'<p class="title"> TOP FOR BOARD GAMES </p>';
+            while($row = $result->fetch_assoc()) {
+              echo 
+              '<p class ="descriere" style="text-align: center;" >'.
+              $rowNo.'. '. $row["type"].'<br>
+              </p>
+              ';
+              $rowNo+=1;
+            }
+          } 
+          else {
+            echo "0 results";
+          }
+        }
+
+        else if($selected_val == "Online")
+       {
+        //afisez topul pe categoria online
+        $conectare=deschideConexiunea();
+        $sql="SELECT DISTINCT(type) FROM games WHERE category='online' ORDER BY views desc";
+        $result=$conectare->query($sql);
+        if ($result->num_rows > 0) {
+            $rowNo='1';
+            // output data of each row
+            echo'<p class="title"> TOP FOR ONLINE GAMES </p>';
+            while($row = $result->fetch_assoc()) {
+              echo 
+              '<p class ="descriere" style="text-align: center;" >'.
+              $rowNo.'. '. $row["type"].'<br>
+              </p>
+              ';
+              $rowNo+=1;
+            }
+          } 
+          else {
+            echo "0 results";
+          }
+        }
+
+
+       }
+      
+     ?>
 
         </body>
     </html>
