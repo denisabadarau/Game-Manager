@@ -1,5 +1,8 @@
 <?php
 include '../php/conectare.php';
+include '../php/view.php';
+//adaug vizualizari  atunci cand un utilizator acceseaza pagina
+addViews('sport');
 ?>
 <!DOCTYPE html>
     <html lang="en">
