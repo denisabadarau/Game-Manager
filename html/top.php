@@ -93,7 +93,7 @@ include '../php/conectare.php';
        {
         //afisez topul pe categoria board
         $conectare=deschideConexiunea();
-        $sql="SELECT name FROM games WHERE id IN (SELECT id_game FROM likes GROUP BY id_game ORDER BY count(id_game) DESC) and category='board'";
+        $sql="SELECT UPPER(name) FROM games WHERE id IN (SELECT id_game FROM likes GROUP BY id_game ORDER BY count(id_game) DESC) and category='board'";
         $result=$conectare->query($sql);
         if ($result->num_rows > 0) {
             $rowNo='1';
@@ -118,7 +118,7 @@ include '../php/conectare.php';
        {
         //afisez topul pe categoria online
         $conectare=deschideConexiunea();
-        $sql="SELECT name FROM games WHERE id IN (SELECT id_game FROM likes GROUP BY id_game ORDER BY count(id_game) DESC) and category='online'";
+        $sql="SELECT UPPER(name) FROM games WHERE id IN (SELECT id_game FROM likes GROUP BY id_game ORDER BY count(id_game) DESC) and category='online'";
         $result=$conectare->query($sql);
         if ($result->num_rows > 0) {
             $rowNo='1';
