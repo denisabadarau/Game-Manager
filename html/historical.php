@@ -1,6 +1,11 @@
 <?php
+session_start();
 include '../php/conectare.php';
 include '../php/view.php';
+
+//verific daca utilizatorul este logat pe cont, in caz afirmativ preiau id ul
+if(isset($_SESSION['id']))$id_user=$_SESSION['id'];
+
 //adaug vizualizari  atunci cand un utilizator acceseaza pagina
 addViews('historical');
 ?>

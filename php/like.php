@@ -1,7 +1,9 @@
 <?php
 include 'conectare.php';
+session_start();
+
 $conectare=deschideConexiunea();
-$id_user="1";
+if(isset($_SESSION['id']))$id_user=$_SESSION['id'];
 $id_game=$_POST['id_game'];
 $id_pagina=$_POST['id_pagina'];
 
@@ -49,7 +51,7 @@ if($id_pagina==6)
 if($id_pagina==7)
 {  
    //ADVENTURE
-   header("Location: ../html/adventura.php");
+   header("Location: ../html/adventure.php");
 
 }
 if($id_pagina==8)

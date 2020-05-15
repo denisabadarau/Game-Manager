@@ -1,6 +1,11 @@
 <?php
+session_start();
 include '../php/conectare.php';
 include '../php/view.php';
+
+//verific daca utilizatorul este logat pe cont, in caz afirmativ preiau id ul
+if(isset($_SESSION['id']))$id_user=$_SESSION['id'];
+
 //adaug vizualizari  atunci cand un utilizator acceseaza pagina
 addViews('action');
 ?>
@@ -71,7 +76,7 @@ addViews('action');
             <p><a class="button" href="#popup1">MORE INFO</a></p>
             <?php
             $conectare=deschideConexiunea();
-            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='28'";
+            $sql="SELECT * FROM likes WHERE id_user='$id_user' AND id_game='28'";
             $result=$conectare->query($sql);
             if(!$result->num_rows){
               //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
@@ -110,7 +115,7 @@ addViews('action');
               <p><a class="button" href="#popup3">MORE INFO</a></p>
               <?php
             $conectare=deschideConexiunea();
-            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='29'";
+            $sql="SELECT * FROM likes WHERE id_user=$id_user AND id_game='29'";
             $result=$conectare->query($sql);
             if(!$result->num_rows){
               //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
@@ -149,7 +154,7 @@ addViews('action');
           <p><a class="button" href="#popup2">MORE INFO</a></p>
           <?php
             $conectare=deschideConexiunea();
-            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='30'";
+            $sql="SELECT * FROM likes WHERE id_user=$id_user AND id_game='30'";
             $result=$conectare->query($sql);
             if(!$result->num_rows){
               //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
@@ -192,7 +197,7 @@ addViews('action');
       <p><a class="button" href="#popup4">MORE INFO</a></p>
       <?php
             $conectare=deschideConexiunea();
-            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='31'";
+            $sql="SELECT * FROM likes WHERE id_user=$id_user AND id_game='31'";
             $result=$conectare->query($sql);
             if(!$result->num_rows){
               //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
@@ -231,7 +236,7 @@ addViews('action');
         <p><a class="button" href="#popup5">MORE INFO</a></p>
         <?php
             $conectare=deschideConexiunea();
-            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='32'";
+            $sql="SELECT * FROM likes WHERE id_user=$id_user AND id_game='32'";
             $result=$conectare->query($sql);
             if(!$result->num_rows){
               //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
@@ -270,7 +275,7 @@ addViews('action');
         <p><a class="button" href="#popup6">MORE INFO</a></p>
         <?php
             $conectare=deschideConexiunea();
-            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='33'";
+            $sql="SELECT * FROM likes WHERE id_user=$id_user AND id_game='33'";
             $result=$conectare->query($sql);
             if(!$result->num_rows){
               //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like

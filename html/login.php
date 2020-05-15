@@ -9,6 +9,10 @@ session_start();
             <link rel = "stylesheet" type="text/css" href = "../css/loginStyle.css">
     </head>
     <body>
+    <?php
+   
+    
+    ?>
         <div class= "login-box">
             <img src = "../images/logo11.png" class="logo">
             <h1>Login</h1>
@@ -16,9 +20,9 @@ session_start();
                 <p>Username</p>
                 <input type="text" name="username" placeholder="Enter Username">
                 <p>Password</p>
-                <input type="text" name="password" placeholder="Enter Password">
+                <input type="password" name="password" placeholder="Enter Password">
                 <input type="submit" name="submit" value="Login">
-                <a href = "#"> Don't have an account? </a> <br>
+                <a href = "register.php"> Don't have an account? </a> <br>
 
             </form>
             <?php

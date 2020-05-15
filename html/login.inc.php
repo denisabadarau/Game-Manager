@@ -13,7 +13,7 @@ if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['pas
     $password = $_POST['password'];
 
     //Extragem cu o variabila sql parola din baza de date
-    $sql = "SELECT * FROM USER WHERE username = '$username'";
+    $sql = "SELECT * FROM user WHERE username = '$username'";
     $result = $conectare->query($sql);
     $row = $result->fetch_assoc();
     $hash = $row['password'];
@@ -25,20 +25,23 @@ if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['pas
     }
     else {
         //preluam datele din Database
-        $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$hash'";
-        $row = $result->fetch_assoc();
+        $sql = "SELECT * FROM user WHERE username = '$username' AND password = '$hash'";
+        $result=$conectare->query($sql);
 
-        if(!$row = $result->fetch_assoc()){
+        if(!$result->num_rows){
             echo 'Parola sau username invalid';
+            header("Location: login.php?info=ParolaGresita");
+            die();
         }
         else {
             $_SESSION['id'] = $row['id'];
             $_SESSION['username'] = $row['username'];
-            $_SESSION['password'] = $row['passwod'];
+            $_SESSION['password'] = $row['password'];
             $_SESSION['email'] = $row['email'];
+            header("Location: meniu.php");
 
         }
-        header("Location: meniu.html");
+        
     }
 
 }
