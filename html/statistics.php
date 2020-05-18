@@ -55,42 +55,45 @@
         <br>
        
 <div class="containerSelect">
-        <label for="chart-select">Chart:</label>
-
-<select name="charts" id="chart-select">
-    <option value="">--Please choose an option--</option>
+<form action="#" method="post">
+<label>Chart:</label>
+<select name="charts">
+    <option value="">--Please choose a chart--</option>
     <option value="line">Line chart</option>
     <option value="pie">Pie chart</option>
     <option value="column">Column chart</option>
-    <option value="pie2">Pie chart 2</option>
     <option value="bar">Bar Chart</option>
 
 </select>
 
-<label for="game-select">Game:</label>
-
-<select name="game" id="game-select">
-    <option value="">--Please choose an option--</option>
+<label>Game:</label>
+<select name="game" >
+    <option value="">--Please choose a game type--</option>
     <option value="board">Board Games</option>
     <option value="online">Online Games</option>
 
 </select>
 
-<label for="type-select">Type:</label>
-
-<select name="types" id="type-select">
-    <option value="">--Please choose an option--</option>
-    <option value="action">Action</option>
-    <option value="adventure">Adventure</option>
-    <option value="biology">Biology</option>
-    <option value="horrror">Horror</option>
-    <option value="strategy">Strategy</option>
-
-
-
+<label>Type:</label>
+<select name="type" >
+    <option value="">--Please choose a type--</option>
+    <option value="likes">After likes</option>
+    <option value="views">After views</option>
 </select>
+<input class="button" type="submit" name="submit" value="SUBMIT" style="font-size:13px"/>
+</form>
 </div>
 
+<?php
+       if(isset($_POST['submit'])){
+       $selected_val1 = $_POST['charts'];  // Storing Selected Value In Variable
+       $selected_val2 = $_POST['game'];  // Storing Selected Value In Variable
+       $selected_val3 = $_POST['type'];  // Storing Selected Value In Variable
+
+       echo $selected_val1 .'<br>' . $selected_val2 .'<br>'.$selected_val3;
+
+       }
+?>
              
       
 </body>
