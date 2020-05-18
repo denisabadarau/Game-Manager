@@ -1,3 +1,8 @@
+<?php
+include '../php/conectare.php';
+include '../php/view.php';
+
+?>
 <!DOCTYPE html>
     <html lang="en">
   <head>
@@ -59,10 +64,11 @@
 <label>Chart:</label>
 <select name="charts">
     <option value="">--Please choose a chart--</option>
-    <option value="line">Line chart</option>
-    <option value="pie">Pie chart</option>
-    <option value="column">Column chart</option>
+    <option value="line">Line Chart</option>
+    <option value="pie">Pie Chart</option>
     <option value="bar">Bar Chart</option>
+    <option value="horizontalBar">Horizontal Bar Chart</option>
+
 
 </select>
 
@@ -89,11 +95,36 @@
        $selected_val1 = $_POST['charts'];  // Storing Selected Value In Variable
        $selected_val2 = $_POST['game'];  // Storing Selected Value In Variable
        $selected_val3 = $_POST['type'];  // Storing Selected Value In Variable
-
-       echo $selected_val1 .'<br>' . $selected_val2 .'<br>'.$selected_val3;
-
+       if($selected_val3=='views')
+       {
+       ?>
+       <canvas id="chartAfterViews"></canvas>
+       <?php
        }
+    }
 ?>
+
+<!--https://www.chartjs.org/docs/latest/getting-started/ -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script>
+var ctx = document.getElementById('chartAfterViews').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: '<?php echo $selected_val1?>',
+
+    // The data for our dataset
+    data: {
+        labels: <?php echo gamesTypeAfterViews($selected_val2)?>,
+        datasets: [{
+            label: 'Statistics for games',
+            data: <?php echo gamesViewsNoAfterViews($selected_val2)?>
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
              
       
 </body>
