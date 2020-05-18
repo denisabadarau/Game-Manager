@@ -1,7 +1,7 @@
 <?php
 include '../php/conectare.php';
 include '../php/view.php';
-
+include '../php/likefunctions.php';
 ?>
 <!DOCTYPE html>
     <html lang="en">
@@ -101,6 +101,13 @@ include '../php/view.php';
        <canvas id="chartAfterViews"></canvas>
        <?php
        }
+       else
+        if($selected_val3=='likes')
+        {
+            ?>
+            <canvas id="chartAfterLikes"></canvas>
+            <?php
+        }
     }
 ?>
 
@@ -108,6 +115,7 @@ include '../php/view.php';
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script>
 var ctx = document.getElementById('chartAfterViews').getContext('2d');
+
 var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: '<?php echo $selected_val1?>',
@@ -125,7 +133,26 @@ var chart = new Chart(ctx, {
     options: {}
 });
 </script>
-             
+
+<script>
+var ctx2= document.getElementById('chartAfterLikes').getContext('2d');
+var chart2 = new Chart(ctx2, {
+    // The type of chart we want to create
+    type: '<?php echo $selected_val1?>',
+
+    // The data for our dataset
+    data: {
+        labels: <?php echo gamesTypeAfterLikes($selected_val2)?>,
+        datasets: [{
+            label: 'Statistics for games',
+            data: <?php echo gamesLikesNoAfterLikes($selected_val2)?>
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>         
       
 </body>
 

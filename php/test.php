@@ -1,14 +1,7 @@
 <?php
 include 'conectare.php';
+include 'likefunctions.php';
 
-function addViews($type)
-{
-    
-    $conectare=deschideConexiunea();
-    $sql="UPDATE games SET views=views+1 WHERE type='$type'";
-    $result=$conectare->query($sql);
-    return 
-}
-
+echo gamesLikesNoAfterLikes('board');
 
 ?>
