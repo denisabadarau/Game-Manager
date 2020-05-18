@@ -77,7 +77,7 @@ addViews('sport');
             <p><a class="button" href="#popup1">MORE INFO</a></p>
             <?php
             $conectare=deschideConexiunea();
-            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='40'";
+            $sql="SELECT * FROM likes WHERE id_user='$id_user' AND id_game='40'";
             $result=$conectare->query($sql);
             if(!$result->num_rows){
               //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
@@ -117,7 +117,7 @@ addViews('sport');
               <p><a class="button" href="#popup3">MORE INFO</a></p>
               <?php
             $conectare=deschideConexiunea();
-            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='41'";
+            $sql="SELECT * FROM likes WHERE id_user='$id_user' AND id_game='41'";
             $result=$conectare->query($sql);
             if(!$result->num_rows){
               //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
@@ -157,7 +157,7 @@ addViews('sport');
           <p><a class="button" href="#popup2">MORE INFO</a></p>
           <?php
             $conectare=deschideConexiunea();
-            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='42'";
+            $sql="SELECT * FROM likes WHERE id_user='$id_user' AND id_game='42'";
             $result=$conectare->query($sql);
             if(!$result->num_rows){
               //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
@@ -203,7 +203,7 @@ addViews('sport');
       <p><a class="button" href="#popup4">MORE INFO</a></p>
       <?php
             $conectare=deschideConexiunea();
-            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='43'";
+            $sql="SELECT * FROM likes WHERE id_user='$id_user' AND id_game='43'";
             $result=$conectare->query($sql);
             if(!$result->num_rows){
               //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
@@ -243,7 +243,7 @@ addViews('sport');
         <p><a class="button" href="#popup5">MORE INFO</a></p>
         <?php
             $conectare=deschideConexiunea();
-            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='44'";
+            $sql="SELECT * FROM likes WHERE id_user='$id_user' AND id_game='44'";
             $result=$conectare->query($sql);
             if(!$result->num_rows){
               //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
@@ -285,7 +285,7 @@ addViews('sport');
         <p><a class="button" href="#popup6">MORE INFO</a></p>
         <?php
             $conectare=deschideConexiunea();
-            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='45'";
+            $sql="SELECT * FROM likes WHERE id_user='$id_user' AND id_game='45'";
             $result=$conectare->query($sql);
             if(!$result->num_rows){
               //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like

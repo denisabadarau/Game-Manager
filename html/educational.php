@@ -78,7 +78,7 @@ addViews('educational');
           <p><a class="button" href="#popup1">MORE INFO</a></p>
             <?php
             $conectare=deschideConexiunea();
-            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='7'";
+            $sql="SELECT * FROM likes WHERE id_user='$id_user' AND id_game='7'";
             $result=$conectare->query($sql);
             if(!$result->num_rows){
               //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
@@ -118,7 +118,7 @@ addViews('educational');
 <p><a class="button" href="#popup2">MORE INFO</a></p>  
             <?php
             $conectare=deschideConexiunea();
-            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='8'";
+            $sql="SELECT * FROM likes WHERE id_user='$id_user' AND id_game='8'";
             $result=$conectare->query($sql);
             if(!$result->num_rows){
               //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
@@ -161,7 +161,7 @@ addViews('educational');
       <p><a class="button" href="#popup3">MORE INFO</a></p>
             <?php
             $conectare=deschideConexiunea();
-            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='9'";
+            $sql="SELECT * FROM likes WHERE id_user='$id_user' AND id_game='9'";
             $result=$conectare->query($sql);
             if(!$result->num_rows){
               //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
@@ -205,7 +205,7 @@ addViews('educational');
     <p><a class="button" href="#popup4">MORE INFO</a></p> 
             <?php
             $conectare=deschideConexiunea();
-            $sql="SELECT * FROM likes WHERE id_user='1' AND id_game='10'";
+            $sql="SELECT * FROM likes WHERE id_user='$id_user' AND id_game='10'";
             $result=$conectare->query($sql);
             if(!$result->num_rows){
               //daca nu a dat inca like, afisez butonul de like si trimit datele catre functia like
