@@ -12,6 +12,16 @@
     <title> My page </title>
 </head>
 <body>
+
+
+
+    <div class="logout-box">  
+      <input type="submit" name="submit" value="Logout">
+      <a href = "logout.inc.php"></a>
+    </div>
+
+
+
     <div class="split left">
     </div>
     <div class="split right">

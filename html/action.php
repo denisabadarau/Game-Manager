@@ -20,7 +20,14 @@ addViews('action');
     <title> My page </title>
 </head>
 <body>
-    
+
+<div class="logout-box">  
+      <a href="logout.inc.php">Logout</a>
+    </div>  
+ <?php
+
+  echo $_SESSION['username'];
+?>
   <div class="split left">
   </div>
   <div class="split right">
@@ -66,7 +73,6 @@ addViews('action');
     
     <br>
     <br>
-
 
 
     <div class="row">
