@@ -1,6 +1,5 @@
 <?php
-function deschideConexiunea()
- {
+function deschideConexiunea() {
  $dbhost = "localhost";
  $dbuser = "root";
  $dbpass = "";
@@ -10,8 +9,7 @@ function deschideConexiunea()
  return $conexiune;
  }
  
-function inchideConexiunea($conexiune)
- {
+function inchideConexiunea($conexiune) {
  $conexiune -> close();
  }
    
