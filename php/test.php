@@ -1,14 +1,39 @@
 <?php
-include 'conectare.php';
+include '../php/conectare.php';
 
-function addViews($type)
+function gamesTypeAfterViews($category)
 {
-    
     $conectare=deschideConexiunea();
-    $sql="UPDATE games SET views=views+1 WHERE type='$type'";
+    $sql="SELECT DISTINCT(type) FROM games WHERE category='$category'";
     $result=$conectare->query($sql);
-    return 
+    $types=[];
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            //pun fiecare tip intr-un string
+            $types[]=$row["type"];
+    }
+}
+return json_encode($types);
 }
 
+function gamesViewsNoAfterViews($category)
+{
+    $conectare=deschideConexiunea();
+    $sql="SELECT DISTINCT(type),views FROM games WHERE category='$category'";
+    $result=$conectare->query($sql);
+    $views=[];
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            //pun fiecare numar de vizualizari intr-un array
+            $views[]=(int)$row["views"];
+
+    }
+}
+return json_encode($views);
+
+}
+
+echo gamesTypeAfterViews('board');
+echo gamesViewsNoAfterViews('board');
 
 ?>
