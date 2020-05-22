@@ -24,35 +24,9 @@ addViews('historical');
     </div>
     <div class="split right">
     </div>
-    <a href="meniu.html"> <img src="../images/logomainalb.png"  style="width:300px;height:100px;margin-left:370px;"> </a>
-        <p class="title">-Game Manager-</p>
-        <ul>
-            <li><a href="meniu.html">Home</a></li>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">BoardGames</a>
-                <div class="dropdown-content">
-                <a href="biology.php">Biology</a>
-                    <a href="educational.php">Educational</a>
-                    <a href="fantasy.php">Fantasy</a>
-                    <a href="historical.php">Historical</a>
-                    <a href="horror.php">Horror</a>
-
-                </div>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">OnlineGames</a>
-                    <div class="dropdown-content">
-                        <a href="action.html">Action</a>
-                        <a href="adventure.html">Adventure</a>
-                        <a href="animal.html">Animal</a>
-                        <a href="sport.html">Sport</a>
-                        <a href="strategy.html">Strategy</a>
-                        <a href="vehicles.html">vehicles</a>
-                    </div>
-                    <li><a href="statistics.html">Statistics</a></li>
-                    <li><a href="battles.html">Battles</a></li>
-                    <li><a href="top.php">Top</a></li>
-            </li>
-        </ul>
+    <?php
+    include 'menu.php';
+    ?>
 
     <div class="container">
       <img class="topImage" src="../images/blueEye.jpg">
