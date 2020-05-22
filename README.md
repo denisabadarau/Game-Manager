@@ -4,14 +4,5 @@ Afrasinei Vlad-Marian
 Badarau Denisa-Ionela
 Mihai Adelina-Alicia
 
-
-## install
-```
-cd api
-yarn intall
-```
-## start projects
-```
-cd api
-yarn start
-```
+https://github.com/denisabadarau/proiect-tw
+https://github.com/denisabadarau/Tehnologii-Web
