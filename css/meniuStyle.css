@@ -17,11 +17,11 @@
     }
     .left {
         left: 0;
-        background-color: slategray;
+        background-image: url(../images/carusel4.jpg);
     }
     .right {
         right: 0;
-        background-color: slategrey;
+        background-image: url(../images/carusel4.jpg);
     }
 
         /*Acest style este pentru meniul principa/*/

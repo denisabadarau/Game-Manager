@@ -5,14 +5,10 @@ session_start();
 <!DOCTYPE html> 
 <html>
     <head>
-        <title>Welcome</title>
+        <title>AdelinaPage</title>
             <link rel = "stylesheet" type="text/css" href = "../css/loginStyle.css">
     </head>
     <body>
-    <?php
-   
-    
-    ?>
         <div class= "login-box">
             <img src = "../images/logo11.png" class="logo">
             <h1>Login</h1>
