@@ -55,11 +55,6 @@
 }
 
 
-body{
-  margin-left:15%;
-  margin-right: 15%;
-}
-
 /* Create 3 equal columns that floats next to each other */
 .column {
 float: left;
@@ -72,30 +67,4 @@ padding: 15px;
 content: "";
 display: table;
 clear: both;
-}
-
-
-/*Create 3 equals menus*/
-ul.categoriesUL {
-list-style-type: none;
-margin: 0%;
-          padding: 1.5%;
-          background-color: #333;
-}
-
-li a.categoriesLI {
-color: #333;
-padding: 8px 16px;
-}
-li a.categoriesLI:hover {
-          background-color:#333;
-      }
-
-
-
-h2.categoriesStyle{
-text-align:center;
-font-family: Impact, Charcoal, sans-serif;
-font-size: 30px
-
 }

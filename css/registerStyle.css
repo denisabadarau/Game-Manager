@@ -1,15 +1,15 @@
 body{
     margin: 0;
     padding: 0;
-    background: url(../images/poza1.jpg);
-    font-family: sans-serif;
+    background: url(../images/carusel4.jpg);
+    font-family: Family-Guy;
     background-size: cover;
     background-position:center top;
 }
 .signIn-box {
     width: 320px;
     height: 420px;
-    background: rgb(2, 2, 2);
+    background: rgba(0, 0, 0, 0.4);
     color: #fff;
     top: 50%;
     left: 50%;
@@ -17,7 +17,7 @@ body{
     transform: translate(-50%,-50%);
     box-sizing: border-box;
     width: 350px;
-    height: 500px;
+    height: 420px;
     padding: 70px 30px;
 
 }
@@ -28,7 +28,7 @@ body{
     border: 90%;
     position: fixed;
     top: -4px;
-    left: 130px;
+    left: 140px;
 
 }
 
@@ -37,7 +37,7 @@ h1 {
     padding: 0 0 20px;
     text-align: center;
     font-size: 22px;
-    color: #b0b4b4;
+    color: #fdfdfd;
 }
 
 .signIn-box p{
@@ -72,8 +72,32 @@ h1 {
     border: none;
     outline: none;
     height: 40px;
-    background: #5d6162;
+    background: rgb(204, 4, 4);
     color: #fff;
     font-size: 18px;
     border-radius: 20px;
 }
+
+divanimation {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    font-family: Family-Guy;
+    font-size: 40px;
+    color:white;
+  }
+  
+  @keyframes example {
+    0%   { left:0px; top:0px;}
+    25%  { left:200px; top:0px;}
+    50%  { left:200px; top:200px;}
+    75%  { left:0px; top:200px;}
+    100% { left:0px; top:0px;}
+  }
+
+  .containerAnimation {
+      float:left;
+      text-align: center;
+  }

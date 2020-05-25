@@ -1,11 +1,3 @@
-<div class="logout-box">  
-  <a href="logout.inc.php">Logout</a>
-</div>  
-<?php
-  echo $_SESSION['username'];
-?>
-<a href="meniu.html"> <img src="../images/logomainalb.png"  style="width:300px;height:100px;margin-left:370px;"> </a>
-        <p class="title">-Game Manager-</p>
         <ul>
           <li><a href="meniu.php">Home</a></li>
           <li class="dropdown">

@@ -1,10 +1,16 @@
 <!DOCTYPE html> 
 <html>
     <head>
-        <title>Welcome</title>
+        <title>AdelinaPage</title>
             <link rel = "stylesheet" type="text/css" href = "../css/registerStyle.css">
     </head>
     <body>
+    <div class= "containerAnimation">
+      <divanimation>WELCOME<br>
+               TO <br>
+         GAME MANAGER</divanimation>
+    </div>
+
         <div class= "signIn-box">
             <img src = "../images/logo11.png" class="logo">
             <h1>Register</h1>
