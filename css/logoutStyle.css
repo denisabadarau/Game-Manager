@@ -1,0 +1,9 @@
+
+    .logout-box{
+        position: right;
+        margin-left: 93%;
+        overflow-x: hidden;
+        
+        color: black;
+        background-color: blueviolet;
+    }

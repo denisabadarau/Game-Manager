@@ -1,15 +1,16 @@
-body{
+body {
     margin: 0;
     padding: 0;
-    background: url(../images/poza1.jpg);
+    background-image: url(../images/carusel4.jpg);
     font-family: sans-serif;
     background-size: cover;
     background-position:center top;
 }
+
 .login-box {
     width: 320px;
     height: 420px;
-    background: rgb(36, 35, 35);
+    background: rgba(0, 0, 0, 0.4);
     color: #fff;
     top: 50%;
     left: 50%;
@@ -17,7 +18,8 @@ body{
     transform: translate(-50%,-50%);
     box-sizing: border-box;
     padding: 70px 30px;
-
+    border-radius: 8px;
+ 
 }
 
 .logo{
@@ -26,7 +28,7 @@ body{
     border: 90%;
     position: fixed;
     top: -4px;
-    left: 120px;
+    left: 124px;
 
 }
 
@@ -35,20 +37,22 @@ h1 {
     padding: 0 0 20px;
     text-align: center;
     font-size: 22px;
-    color: #b0b4b4;
+    color: #fbfbfb;
 }
 
 .login-box p{
     margin: 0;
     padding: 0;
     font-weight: bold;
+    border-radius: 4px;
 }
 
 .login-box a{
     margin: 0;
     padding: 0;
     font-weight: bold;
-    color: #878888;
+    color: #ffffff;
+    border-radius: 4px;
 }
 
 .login-box input{
@@ -59,7 +63,7 @@ h1 {
 .login-box input[type = "text"], input[type = "password"] {
     border: none;
     border-bottom: 1px solid #fff;
-    background: transparent;
+    background-color: transparent;
     outline: none;
     height: 40px;
     color: #fff;
@@ -70,8 +74,36 @@ h1 {
     border: none;
     outline: none;
     height: 40px;
-    background: #5d6162;
+    background-color:rgb(204, 4, 4);
     color: #fff;
     font-size: 18px;
     border-radius: 20px;
 }
+
+divanimation {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    font-family: Family-Guy;
+    font-size: 40px;
+    color:white;
+  }
+  
+  @keyframes example {
+    0%   { left:0px; top:0px;}
+    25%  { left:200px; top:0px;}
+    50%  { left:200px; top:200px;}
+    75%  { left:0px; top:200px;}
+    100% { left:0px; top:0px;}
+  }
+
+  .containerAnimation {
+      float:left;
+      text-align: center;
+  }
+
+  .descriptionGame {
+      margin-top: 40%;
+  }
