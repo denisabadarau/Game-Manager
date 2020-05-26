@@ -6,27 +6,14 @@
     <link href="../css/paginaJocuriStyle.css" rel="stylesheet">
     <link href="../css/modalStyle.css" rel="stylesheet">
     <link href="../css/statisticsStyle.css" rel="stylesheet">
-<<<<<<< HEAD
     <link href="../css/battles.css" rel="stylesheet">
-=======
-<<<<<<< HEAD
     <link href="../css/battles.css" rel="stylesheet">
-=======
->>>>>>> aee8bfc386637027f83de58ac5ba0324103dd888
->>>>>>> 7f03b09eb6c14a92b2dd8ec6f2c00e2ed6e7ec56
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title> My page </title>
 </head>
 <body>
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 7f03b09eb6c14a92b2dd8ec6f2c00e2ed6e7ec56
-
-
     <div class="logout-box">  
       <input type="submit" name="submit" value="Logout">
       <a href = "logout.inc.php"></a>

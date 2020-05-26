@@ -45,12 +45,12 @@ include '../php/view.php';
           </li>
       </ul>
       <?php
-      include 'caruselBoardGames.html';
+      include 'caruselOnlineGames.html';
       ?>
     <p class="title">Most popular games</p>
     <?php
   $db=deschideConexiunea();
-  $sql = "SELECT id,minidescriere FROM games where category='board' order by likes DESC limit 9";
+  $sql = "SELECT id,minidescriere FROM games where category='online' order by likes DESC limit 9";
   $result = $db->query($sql);
   $rowno='0';
   if ($result->num_rows > 0){
@@ -104,7 +104,7 @@ include '../php/view.php';
   <div class="dropdown-content">
      <?php
       $db=deschideConexiunea();
-      $sql = "SELECT DISTINCT type FROM games WHERE category='board'";
+      $sql = "SELECT DISTINCT type FROM games WHERE category='online'";
       $result = $db->query($sql);
       if ($result->num_rows > 0){
         while($row = $result->fetch_assoc()) {
