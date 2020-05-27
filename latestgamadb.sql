@@ -23,48 +23,8 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
---
--- Structură tabel pentru tabel `admin`
---
 
-CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Eliminarea datelor din tabel `admin`
---
-
-INSERT INTO `admin` (`id`, `username`, `password`, `email`) VALUES
-(1, 'denisa', 'denisa', 'denisa_ionela28@yahoo.com'),
-(2, 'adelina', 'adelina', 'adelina_alicia_2007@yahoo.com'),
-(3, 'vlad', 'vlad', 'vlad_afrasinei@yahoo.com');
-
--- --------------------------------------------------------
-
---
--- Structură tabel pentru tabel `battles`
---
-
-CREATE TABLE `battles` (
-  `id_turneu` int(11) NOT NULL,
-  `id_jucator` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Structură tabel pentru tabel `comments`
---
-
-CREATE TABLE `comments` (
-  `id_turneu` int(11) NOT NULL,
-  `id_jucator` int(11) NOT NULL,
-  `comentariu` varchar(10000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -227,84 +187,17 @@ INSERT INTO `images` (`id`, `id_game`, `img1`, `img2`, `img3`) VALUES
 -- Structură tabel pentru tabel `likes`
 --
 
-CREATE TABLE `likes` (
-  `id_user` int(11) NOT NULL,
-  `id_game` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Eliminarea datelor din tabel `likes`
---
-
-INSERT INTO `likes` (`id_user`, `id_game`) VALUES
-(1, 1),
-(1, 5),
-(1, 4),
-(1, 28),
-(4, 11),
-(4, 12),
-(4, 13),
-(4, 15),
-(4, 7),
-(4, 17),
-(4, 24),
-(4, 2);
 
 -- --------------------------------------------------------
 
---
--- Structură tabel pentru tabel `tournament`
---
-
-CREATE TABLE `tournament` (
-  `id_turneu` int(11) NOT NULL,
-  `nume_joc` varchar(100) NOT NULL,
-  `nume_creator` varchar(100) NOT NULL,
-  `data_creare` date NOT NULL,
-  `data_turneu` date NOT NULL,
-  `nr_jucatori` int(11) NOT NULL,
-  `premiu` int(11) NOT NULL,
-  `category` varchar(100) NOT NULL,
-  `type` varchar(20) NOT NULL,
-  `locatia` varchar(100) NOT NULL,
-  `titlu_turneu` varchar(1000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Structură tabel pentru tabel `user`
---
-
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Eliminarea datelor din tabel `user`
---
-
-INSERT INTO `user` (`id`, `username`, `password`, `email`) VALUES
-(1, 'denisa', 'denisa', 'denisa_ionela28@yahoo.com'),
-(2, 'adelina', 'adelina', 'adelina_alicia_2007@yahoo.com'),
-(3, 'vlad', 'vlad', 'vlad_afrasinei@yahoo.com'),
-(4, 'vlad1', '$2y$10$X/iGGR6TOX6pJlDXvBbqZudRQBUuu6kL.zR/LBnehWS48uqan6b6W', 'a.vlad_10@yahoo.com');
 
 --
 -- Indexuri pentru tabele eliminate
 --
 
 --
--- Indexuri pentru tabele `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `unique` (`email`);
 
---
 -- Indexuri pentru tabele `games`
 --
 ALTER TABLE `games`
@@ -317,24 +210,9 @@ ALTER TABLE `images`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexuri pentru tabele `likes`
+-
 --
-ALTER TABLE `likes`
-  ADD KEY `id_user` (`id_user`),
-  ADD KEY `id_game` (`id_game`);
-
 --
--- Indexuri pentru tabele `tournament`
---
-ALTER TABLE `tournament`
-  ADD PRIMARY KEY (`id_turneu`);
-
---
--- Indexuri pentru tabele `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `unique` (`email`);
 
 --
 -- AUTO_INCREMENT pentru tabele eliminate
@@ -343,8 +221,6 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT pentru tabele `admin`
 --
-ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pentru tabele `games`
@@ -359,28 +235,12 @@ ALTER TABLE `images`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
--- AUTO_INCREMENT pentru tabele `tournament`
---
-ALTER TABLE `tournament`
-  MODIFY `id_turneu` int(11) NOT NULL AUTO_INCREMENT;
 
---
--- AUTO_INCREMENT pentru tabele `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- Constrângeri pentru tabele eliminate
 --
 
 --
--- Constrângeri pentru tabele `likes`
 --
-ALTER TABLE `likes`
-  ADD CONSTRAINT `likes_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `likes_ibfk_2` FOREIGN KEY (`id_game`) REFERENCES `games` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

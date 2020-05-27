@@ -4,7 +4,7 @@ include '../php/conectare.php';
 <!DOCTYPE html>
     <html lang="en">
   <head>
-    <link href="../css/meniuStyle.css" rel="stylesheet">
+    <link href="../css/meniu-style.css" rel="stylesheet">
     <link href="../css/boardGamesStyle.css" rel="stylesheet">
     <link href="../css/paginaJocuriStyle.css" rel="stylesheet">
     <link href="../css/modalStyle.css" rel="stylesheet">
@@ -15,15 +15,10 @@ include '../php/conectare.php';
     <title> My page </title>
 </head>
 <body>
-    <div class="split left">
-    </div>
-    <div class="split right">
-    </div>
-    <?php
-    include 'menu.html';
+<?php
+    include 'menu.php';
     ?>
-      <br>
-    <div class="containerSelect">
+<div class="containerSelect">
       <form action="#" method="post">
           <label>GAMES: </label>
         <select name="game">
@@ -47,7 +42,6 @@ include '../php/conectare.php';
       <input class="button" type="submit" name="submit2" value="Get the top" style="font-size:13px"/>
      </form>
 </div>
-
 
      <?php
        if(isset($_POST['submit'])){

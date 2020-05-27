@@ -6,7 +6,7 @@ include '../php/likefunctions.php';
 <!DOCTYPE html>
     <html lang="en">
   <head>
-    <link href="../css/meniuStyle.css" rel="stylesheet">
+    <link href="../css/meniu-style.css" rel="stylesheet">
     <link href="../css/boardGamesStyle.css" rel="stylesheet">
     <link href="../css/paginaJocuriStyle.css" rel="stylesheet">
     <link href="../css/modalStyle.css" rel="stylesheet">

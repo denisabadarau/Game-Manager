@@ -5,8 +5,9 @@ include '../php/view.php';
 <!DOCTYPE html>
     <html lang="en">
   <head>
-    <link href="../css/meniuStyle.css" rel="stylesheet">
+    <link href="../css/meniu-style.css" rel="stylesheet">
     <link href="../css/boardGamesStyle.css" rel="stylesheet">
+    <link href="../css/boardgames.css" rel="stylesheet">
     <link href="../css/paginaJocuriStyle.css" rel="stylesheet">
     <link href="../css/modalStyle.css" rel="stylesheet">
     <link href="../css/statisticsStyle.css" rel="stylesheet">
@@ -27,23 +28,9 @@ include '../php/view.php';
 
 
 
-    <div class="split left">
-    </div>
-    <div class="split right">
-    </div>
-    <a href="meniu.html"> <img src="../images/logomainalb.png"  style="width:300px;height:100px;margin-left:370px;"> </a>
-        <p class="title">-Game Manager-</p>
-        <ul>
-          <li><a href="meniu.html">Home</a></li>
-          <li><a href="statistics.html">Board Games</a></li>
-
-              <li><a href="statistics.html">Online Games</a></li>
-                  
-                  <li><a href="statistics.html">Statistics</a></li>
-                  <li><a href="battles.html">Battles</a></li>
-                  <li><a href="top.php">Top</a></li>
-          </li>
-      </ul>
+    <?php
+    include 'menu.php';
+    ?>
       <?php
       include 'caruselOnlineGames.html';
       ?>
