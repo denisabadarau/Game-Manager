@@ -1,11 +1,17 @@
 <?php
 session_start();
 include '../php/conectare.php';
+include '../php/view.php';
+
 
 //verific daca utilizatorul este logat pe cont, in caz afirmativ preiau id ul
 if(isset($_SESSION['id']))$id_user=$_SESSION['id'];
 
+//preiau id ul jocului
 $id_game=$_GET['id'];
+
+//maresc numarul de vizualizari pentru joc
+addViews($id_game);
 ?>
 <!DOCTYPE html>
     <html lang="en">
