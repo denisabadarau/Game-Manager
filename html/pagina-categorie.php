@@ -110,7 +110,7 @@ session_start();
         <script> getValue('.$id_user.','.$id_joc.');</script>
         <script>getLikes('.$id_joc.');</script>
           <input id="butonulMeu'.$id_joc.'" type="button" class="button" onclick="changeValue(this.value,'.$id_user.','.$id_joc.')">
-          <p>LIKES( <span id="likeNR'.$id_joc.'"></span> )</p>
+          <p style="display:inline; color:black;">LIKES( <span id="likeNR'.$id_joc.'"></span> )</p>
           </div>
         </div>';
       }
@@ -128,7 +128,7 @@ session_start();
         <script> getValue('.$id_user.','.$id_joc.');</script>
         <script>getLikes('.$id_joc.');</script>
           <input id="butonulMeu'.$id_joc.'" type="button" class="button" onclick="changeValue(this.value,'.$id_user.','.$id_joc.')">
-          <p>LIKES( <span id="likeNR'.$id_joc.'"></span> )</p>
+          <p style="display:inline; color:black;">LIKES( <span id="likeNR'.$id_joc.'"></span> )</p>
           </div>
         </div>';
       }
@@ -147,7 +147,7 @@ session_start();
       <script> getValue('.$id_user.','.$id_joc.');</script>
         <script>getLikes('.$id_joc.');</script>
           <input id="butonulMeu'.$id_joc.'" type="button" class="button" onclick="changeValue(this.value,'.$id_user.','.$id_joc.')">
-          <p>LIKES( <span id="likeNR'.$id_joc.'"></span> )</p>
+          <p style="display:inline; color:black;">LIKES( <span id="likeNR'.$id_joc.'"></span> )</p>
           </div>
         </div>';
       }
