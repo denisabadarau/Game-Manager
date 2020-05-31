@@ -29,4 +29,5 @@ function afisbattle1(a){
   xhttp.send();
     }
 
+    
 </script>
