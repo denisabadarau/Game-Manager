@@ -53,7 +53,30 @@
         margin-top:-5px;
         border: 2px solid slategray;
         overflow-y: scroll;
-    max-height: 433px;
+        max-height: 433px;
+  }
+  .chenarcom{
+    border-style: groove;
+    background: green;
+    margin-top:1%
+    
+  }
+  .chenarcomutiz{
+    display:inline;
+    margin-left: 1%;
+    max-width:75px;
+    
+  }
+
+  .chenarcomcom{
+    max-width:200px;
+    display:inline;
+    margin-left:5%;
+  }
+  .chenarcomdata{
+    margin-right: 1%;
+    display:inline;
+    margin-left:5%;
   }
   
   

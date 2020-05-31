@@ -30,184 +30,38 @@
         </div> 
 </div>
 
-        <button class="button button1">Create a Tournament</button>
-        <button class="button button2">View Tournaments</button>
-        <button class="button button3">View Comments</button>
-        <div class="chenar">Valoarea pentru completarea spatiului poate fi una din urmatoarele:
-- o valoare de tip lungime
-- o valoare procentuala – creaza umplerea in raport cu latimea elementului parinte.
-Cand specificati toate cele patru valori, ele sunt aplicate in ordinea: sus, dreapta, jos, stanga.
-Daca specificati doar o valoare, aceasta va fi aplicata tuturor celor patru directii.
-Daca specificati doua sau trei valori, atunci valorile care lipsesc sunt copiate dupa valorile laturilor opuse.
+        <button  class="button button1" onclick="afisbattle1(1)">Create a Tournament</button>
+        <button class="button button2" onclick="afisbattle1(2)">View Tournaments</button>
+        <button class="button button3" onclick="afisbattle1(3),initialtabel()">View Comments</button>
+        <div id="demo" class="chenar">
+        <?php
+        include 'comments1.php'
+        ?>
+        </div>
+        <p>ANASADWAD</p>
+        
+        <div class="chenarcom">Anaaaaaaaaaaaaaaaaaaaaaaa </div>
 
-Iata un exemplu in care etichetele DIV vor avea distanta padding: sus 4 pixeli, dreapta 2 pixeli, jos 3 pixeli si in stanga 2 pixeli:
-Valoarea pentru completarea spatiului poate fi una din urmatoarele:
-- o valoare de tip lungime
-- o valoare procentuala – creaza umplerea in raport cu latimea elementului parinte.
-Cand specificati toate cele patru valori, ele sunt aplicate in ordinea: sus, dreapta, jos, stanga.
-Daca specificati doar o valoare, aceasta va fi aplicata tuturor celor patru directii.
-Daca specificati doua sau trei valori, atunci valorile care lipsesc sunt copiate dupa valorile laturilor opuse.
-
-Iata un exemplu in care etichetele DIV vor avea distanta padding: sus 4 pixeli, dreapta 2 pixeli, jos 3 pixeli si in stanga 2 pixeli:
-Valoarea pentru completarea spatiului poate fi una din urmatoarele:
-- o valoare de tip lungime
-- o valoare procentuala – creaza umplerea in raport cu latimea elementului parinte.
-Cand specificati toate cele patru valori, ele sunt aplicate in ordinea: sus, dreapta, jos, stanga.
-Daca specificati doar o valoare, aceasta va fi aplicata tuturor celor patru directii.
-Daca specificati doua sau trei valori, atunci valorile care lipsesc sunt copiate dupa valorile laturilor opuse.
-
-Iata un exemplu in care etichetele DIV vor avea distanta padding: sus 4 pixeli, dreapta 2 pixeli, jos 3 pixeli si in stanga 2 pixeli:
-Valoarea pentru completarea spatiului poate fi una din urmatoarele:
-- o valoare de tip lungime
-- o valoare procentuala – creaza umplerea in raport cu latimea elementului parinte.
-Cand specificati toate cele patru valori, ele sunt aplicate in ordinea: sus, dreapta, jos, stanga.
-Daca specificati doar o valoare, aceasta va fi aplicata tuturor celor patru directii.
-Daca specificati doua sau trei valori, atunci valorile care lipsesc sunt copiate dupa valorile laturilor opuse.
-
-Iata un exemplu in care etichetele DIV vor avea distanta padding: sus 4 pixeli, dreapta 2 pixeli, jos 3 pixeli si in stanga 2 pixeli:
-Valoarea pentru completarea spatiului poate fi una din urmatoarele:
-- o valoare de tip lungime
-- o valoare procentuala – creaza umplerea in raport cu latimea elementului parinte.
-Cand specificati toate cele patru valori, ele sunt aplicate in ordinea: sus, dreapta, jos, stanga.
-Daca specificati doar o valoare, aceasta va fi aplicata tuturor celor patru directii.
-Daca specificati doua sau trei valori, atunci valorile care lipsesc sunt copiate dupa valorile laturilor opuse.
-
-Iata un exemplu in care etichetele DIV vor avea distanta padding: sus 4 pixeli, dreapta 2 pixeli, jos 3 pixeli si in stanga 2 pixeli:
-Valoarea pentru completarea spatiului poate fi una din urmatoarele:
-- o valoare de tip lungime
-- o valoare procentuala – creaza umplerea in raport cu latimea elementului parinte.
-Cand specificati toate cele patru valori, ele sunt aplicate in ordinea: sus, dreapta, jos, stanga.
-Daca specificati doar o valoare, aceasta va fi aplicata tuturor celor patru directii.
-Daca specificati doua sau trei valori, atunci valorile care lipsesc sunt copiate dupa valorile laturilor opuse.
-
-Iata un exemplu in care etichetele DIV vor avea distanta padding: sus 4 pixeli, dreapta 2 pixeli, jos 3 pixeli si in stanga 2 pixeli:
-Valoarea pentru completarea spatiului poate fi una din urmatoarele:
-- o valoare de tip lungime
-- o valoare procentuala – creaza umplerea in raport cu latimea elementului parinte.
-Cand specificati toate cele patru valori, ele sunt aplicate in ordinea: sus, dreapta, jos, stanga.
-Daca specificati doar o valoare, aceasta va fi aplicata tuturor celor patru directii.
-Daca specificati doua sau trei valori, atunci valorile care lipsesc sunt copiate dupa valorile laturilor opuse.
-
-Iata un exemplu in care etichetele DIV vor avea distanta padding: sus 4 pixeli, dreapta 2 pixeli, jos 3 pixeli si in stanga 2 pixeli:
-Valoarea pentru completarea spatiului poate fi una din urmatoarele:
-- o valoare de tip lungime
-- o valoare procentuala – creaza umplerea in raport cu latimea elementului parinte.
-Cand specificati toate cele patru valori, ele sunt aplicate in ordinea: sus, dreapta, jos, stanga.
-Daca specificati doar o valoare, aceasta va fi aplicata tuturor celor patru directii.
-Daca specificati doua sau trei valori, atunci valorile care lipsesc sunt copiate dupa valorile laturilor opuse.
-
-Iata un exemplu in care etichetele DIV vor avea distanta padding: sus 4 pixeli, dreapta 2 pixeli, jos 3 pixeli si in stanga 2 pixeli:
-Valoarea pentru completarea spatiului poate fi una din urmatoarele:
-- o valoare de tip lungime
-- o valoare procentuala – creaza umplerea in raport cu latimea elementului parinte.
-Cand specificati toate cele patru valori, ele sunt aplicate in ordinea: sus, dreapta, jos, stanga.
-Daca specificati doar o valoare, aceasta va fi aplicata tuturor celor patru directii.
-Daca specificati doua sau trei valori, atunci valorile care lipsesc sunt copiate dupa valorile laturilor opuse.
-
-Iata un exemplu in care etichetele DIV vor avea distanta padding: sus 4 pixeli, dreapta 2 pixeli, jos 3 pixeli si in stanga 2 pixeli:
-Valoarea pentru completarea spatiului poate fi una din urmatoarele:
-- o valoare de tip lungime
-- o valoare procentuala – creaza umplerea in raport cu latimea elementului parinte.
-Cand specificati toate cele patru valori, ele sunt aplicate in ordinea: sus, dreapta, jos, stanga.
-Daca specificati doar o valoare, aceasta va fi aplicata tuturor celor patru directii.
-Daca specificati doua sau trei valori, atunci valorile care lipsesc sunt copiate dupa valorile laturilor opuse.
-
-Iata un exemplu in care etichetele DIV vor avea distanta padding: sus 4 pixeli, dreapta 2 pixeli, jos 3 pixeli si in stanga 2 pixeli:
-Valoarea pentru completarea spatiului poate fi una din urmatoarele:
-- o valoare de tip lungime
-- o valoare procentuala – creaza umplerea in raport cu latimea elementului parinte.
-Cand specificati toate cele patru valori, ele sunt aplicate in ordinea: sus, dreapta, jos, stanga.
-Daca specificati doar o valoare, aceasta va fi aplicata tuturor celor patru directii.
-Daca specificati doua sau trei valori, atunci valorile care lipsesc sunt copiate dupa valorile laturilor opuse.
-
-Iata un exemplu in care etichetele DIV vor avea distanta padding: sus 4 pixeli, dreapta 2 pixeli, jos 3 pixeli si in stanga 2 pixeli:
-Valoarea pentru completarea spatiului poate fi una din urmatoarele:
-- o valoare de tip lungime
-- o valoare procentuala – creaza umplerea in raport cu latimea elementului parinte.
-Cand specificati toate cele patru valori, ele sunt aplicate in ordinea: sus, dreapta, jos, stanga.
-Daca specificati doar o valoare, aceasta va fi aplicata tuturor celor patru directii.
-Daca specificati doua sau trei valori, atunci valorile care lipsesc sunt copiate dupa valorile laturilor opuse.
-
-Iata un exemplu in care etichetele DIV vor avea distanta padding: sus 4 pixeli, dreapta 2 pixeli, jos 3 pixeli si in stanga 2 pixeli:
-Valoarea pentru completarea spatiului poate fi una din urmatoarele:
-- o valoare de tip lungime
-- o valoare procentuala – creaza umplerea in raport cu latimea elementului parinte.
-Cand specificati toate cele patru valori, ele sunt aplicate in ordinea: sus, dreapta, jos, stanga.
-Daca specificati doar o valoare, aceasta va fi aplicata tuturor celor patru directii.
-Daca specificati doua sau trei valori, atunci valorile care lipsesc sunt copiate dupa valorile laturilor opuse.
-
-Iata un exemplu in care etichetele DIV vor avea distanta padding: sus 4 pixeli, dreapta 2 pixeli, jos 3 pixeli si in stanga 2 pixeli:
-Valoarea pentru completarea spatiului poate fi una din urmatoarele:
-- o valoare de tip lungime
-- o valoare procentuala – creaza umplerea in raport cu latimea elementului parinte.
-Cand specificati toate cele patru valori, ele sunt aplicate in ordinea: sus, dreapta, jos, stanga.
-Daca specificati doar o valoare, aceasta va fi aplicata tuturor celor patru directii.
-Daca specificati doua sau trei valori, atunci valorile care lipsesc sunt copiate dupa valorile laturilor opuse.
-
-Iata un exemplu in care etichetele DIV vor avea distanta padding: sus 4 pixeli, dreapta 2 pixeli, jos 3 pixeli si in stanga 2 pixeli:
-Valoarea pentru completarea spatiului poate fi una din urmatoarele:
-- o valoare de tip lungime
-- o valoare procentuala – creaza umplerea in raport cu latimea elementului parinte.
-Cand specificati toate cele patru valori, ele sunt aplicate in ordinea: sus, dreapta, jos, stanga.
-Daca specificati doar o valoare, aceasta va fi aplicata tuturor celor patru directii.
-Daca specificati doua sau trei valori, atunci valorile care lipsesc sunt copiate dupa valorile laturilor opuse.
-
-Iata un exemplu in care etichetele DIV vor avea distanta padding: sus 4 pixeli, dreapta 2 pixeli, jos 3 pixeli si in stanga 2 pixeli:
-Valoarea pentru completarea spatiului poate fi una din urmatoarele:
-- o valoare de tip lungime
-- o valoare procentuala – creaza umplerea in raport cu latimea elementului parinte.
-Cand specificati toate cele patru valori, ele sunt aplicate in ordinea: sus, dreapta, jos, stanga.
-Daca specificati doar o valoare, aceasta va fi aplicata tuturor celor patru directii.
-Daca specificati doua sau trei valori, atunci valorile care lipsesc sunt copiate dupa valorile laturilor opuse.
-
-Iata un exemplu in care etichetele DIV vor avea distanta padding: sus 4 pixeli, dreapta 2 pixeli, jos 3 pixeli si in stanga 2 pixeli:
-Valoarea pentru completarea spatiului poate fi una din urmatoarele:
-- o valoare de tip lungime
-- o valoare procentuala – creaza umplerea in raport cu latimea elementului parinte.
-Cand specificati toate cele patru valori, ele sunt aplicate in ordinea: sus, dreapta, jos, stanga.
-Daca specificati doar o valoare, aceasta va fi aplicata tuturor celor patru directii.
-Daca specificati doua sau trei valori, atunci valorile care lipsesc sunt copiate dupa valorile laturilor opuse.
-
-Iata un exemplu in care etichetele DIV vor avea distanta padding: sus 4 pixeli, dreapta 2 pixeli, jos 3 pixeli si in stanga 2 pixeli:
-Valoarea pentru completarea spatiului poate fi una din urmatoarele:
-- o valoare de tip lungime
-- o valoare procentuala – creaza umplerea in raport cu latimea elementului parinte.
-Cand specificati toate cele patru valori, ele sunt aplicate in ordinea: sus, dreapta, jos, stanga.
-Daca specificati doar o valoare, aceasta va fi aplicata tuturor celor patru directii.
-Daca specificati doua sau trei valori, atunci valorile care lipsesc sunt copiate dupa valorile laturilor opuse.
-
-Iata un exemplu in care etichetele DIV vor avea distanta padding: sus 4 pixeli, dreapta 2 pixeli, jos 3 pixeli si in stanga 2 pixeli:
-Valoarea pentru completarea spatiului poate fi una din urmatoarele:
-- o valoare de tip lungime
-- o valoare procentuala – creaza umplerea in raport cu latimea elementului parinte.
-Cand specificati toate cele patru valori, ele sunt aplicate in ordinea: sus, dreapta, jos, stanga.
-Daca specificati doar o valoare, aceasta va fi aplicata tuturor celor patru directii.
-Daca specificati doua sau trei valori, atunci valorile care lipsesc sunt copiate dupa valorile laturilor opuse.
-
-Iata un exemplu in care etichetele DIV vor avea distanta padding: sus 4 pixeli, dreapta 2 pixeli, jos 3 pixeli si in stanga 2 pixeli:
-Valoarea pentru completarea spatiului poate fi una din urmatoarele:
-- o valoare de tip lungime
-- o valoare procentuala – creaza umplerea in raport cu latimea elementului parinte.
-Cand specificati toate cele patru valori, ele sunt aplicate in ordinea: sus, dreapta, jos, stanga.
-Daca specificati doar o valoare, aceasta va fi aplicata tuturor celor patru directii.
-Daca specificati doua sau trei valori, atunci valorile care lipsesc sunt copiate dupa valorile laturilor opuse.
-
-Iata un exemplu in care etichetele DIV vor avea distanta padding: sus 4 pixeli, dreapta 2 pixeli, jos 3 pixeli si in stanga 2 pixeli:
-Valoarea pentru completarea spatiului poate fi una din urmatoarele:
-- o valoare de tip lungime
-- o valoare procentuala – creaza umplerea in raport cu latimea elementului parinte.
-Cand specificati toate cele patru valori, ele sunt aplicate in ordinea: sus, dreapta, jos, stanga.
-Daca specificati doar o valoare, aceasta va fi aplicata tuturor celor patru directii.
-Daca specificati doua sau trei valori, atunci valorile care lipsesc sunt copiate dupa valorile laturilor opuse.
-
-Iata un exemplu in care etichetele DIV vor avea distanta padding: sus 4 pixeli, dreapta 2 pixeli, jos 3 pixeli si in stanga 2 pixeli:
-Valoarea pentru completarea spatiului poate fi una din urmatoarele:
-- o valoare de tip lungime
-- o valoare procentuala – creaza umplerea in raport cu latimea elementului parinte.
-Cand specificati toate cele patru valori, ele sunt aplicate in ordinea: sus, dreapta, jos, stanga.
-Daca specificati doar o valoare, aceasta va fi aplicata tuturor celor patru directii.
-Daca specificati doua sau trei valori, atunci valorile care lipsesc sunt copiate dupa valorile laturilor opuse.
-
-Iata un exemplu in care etichetele DIV vor avea distanta padding: sus 4 pixeli, dreapta 2 pixeli, jos 3 pixeli si in stanga 2 pixeli:</div>
+        
+<script>
+function afisbattle1(a){
+    var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  if(a==1)
+  xhttp.open("GET", "comments2.php", true);
+  else
+  if(a==2)
+  xhttp.open("GET", "comments1.php", true);
+  else
+  if(a==3)
+  xhttp.open("GET", "commentsbattle.php", true);
+  xhttp.send();
+    }
+</script>
 </body>
 </html>
