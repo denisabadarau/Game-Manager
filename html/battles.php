@@ -36,13 +36,6 @@ if(isset($_SESSION['id']))$id_user=$_SESSION['id'];
 </div>
 
         <button  class="button button1" onclick="afisbattle1(1)">Create a Tournament</button>
-        <button class="button button2" onclick="afisbattle1(2)">View Tournaments</button>
-        <button class="button button3" onclick="afisbattle1(3),initialtabel()">View Comments</button>
-        <div id="demo" class="chenar">
-        <?php
-        include 'comments1.php'
-        ?>
-        </div>  
         <button class="button button2" onclick="viewtournaments('<?php echo $id_user; ?>')">View Tournaments</button>
         <button class="button button3" onclick="afisbattle1(3),initialtabel()">View Comments</button>
         <div id="demo" class="chenar">
@@ -61,9 +54,6 @@ function afisbattle1(a){
   };
   if(a==1)
   xhttp.open("GET", "comments2.php", true);
-  else
-  if(a==2)
-  xhttp.open("GET", "comments1.php", true);
   else
   if(a==3)
   xhttp.open("GET", "commentsbattle.php", true);
