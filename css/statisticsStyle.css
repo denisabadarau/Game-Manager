@@ -1,19 +1,71 @@
 
     .containerSelect{
-      margin:30px;
+      margin:20%;
       font-family: Chunk Five Print;
       padding:10px;
+      display:inline;
+      
     }
     select{
       font-family: Chunk Five Print;
       color: grey;
       padding: 10px;
       text-align: center;
+      display:inline;
+
     }
     option{
       padding:10px;
+      text-align: center;
+
     }
     label{
-      margin-left: 20px;
+      margin-left: 4%;
+    }
+    .buttonTOP {
+      font-family: Family-Guy;
+      font-size: 20px;
+      padding: 5px 10px;
+      background-color: white;
+      border-radius: 2px;
+      color:slategray;
+      text-decoration: none;
+      text-shadow: 1px 1px 1px #fff;
+      cursor: pointer;
+      transition: all 0.2s ease-out;
+      display: inline;
     }
 
+    .top{
+        border-style: none;
+        background: white;
+        margin-left:12%;
+        margin-right:14%;
+        font-family: Chunk Five Print;
+
+    }
+
+    .game{
+      background-color: white;
+      margin-left:5%;
+    margin-right:5%;
+      border-bottom:1px solid gray;
+    margin-bottom: 3%;
+    }
+    .info{
+      display: inline;
+
+    }
+    .game img{
+     display: inline;
+      width:25%;
+      vertical-align:middle;
+      margin-bottom: 10px;
+    }
+
+    .titluTop{
+      text-align: center;
+      font-family: Chunk Five Print;
+      font-size: 30px;
+
+    }
