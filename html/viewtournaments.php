@@ -1,10 +1,30 @@
 <script>
 function getValue(id_user,id_turneu,data_turneu,nr_jucatori){
         var ajaxRequest= new XMLHttpRequest();
+        alert("m am apelat1");
+
         ajaxRequest.onreadystatechange = function(){
             if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
                 var response =ajaxRequest.responseText;
-                document.getElementById("butonulMeu"+id_turneu).value=response;
+                
+            //alert(response);
+                if(response=="JOIN")
+                  {
+                      document.getElementById("butonulMeu"+id_turneu).value=response;
+                      document.getElementById("butonulMeu"+id_turneu).style.color="green";
+
+                      }
+                else 
+                    if(response=="CAN'T JOIN")
+                    {
+                        document.getElementById("butonulMeu"+id_turneu).style.display="none";
+                        
+                        }
+                else 
+                   if(response=="UNJOIN")
+                { document.getElementById("butonulMeu"+id_turneu).value=response;
+                  document.getElementById("butonulMeu"+id_turneu).style.color="red";
+                }
                 
             }
         }
@@ -16,10 +36,22 @@ function getValue(id_user,id_turneu,data_turneu,nr_jucatori){
 
     function changeValue(str,id_user,id_turneu){
         var ajaxRequest= new XMLHttpRequest();
+        alert("m am apelat2");
+
         ajaxRequest.onreadystatechange = function(){
             if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
                 var response =ajaxRequest.responseText;
-                document.getElementById("butonulMeu"+id_turneu).value=response;
+                if(response=="JOIN")
+                  {
+                      document.getElementById("butonulMeu"+id_turneu).value=response;
+                      document.getElementById("butonulMeu"+id_turneu).style.color="green";
+
+                      }
+                else 
+                   if(response=="UNJOIN")
+                { document.getElementById("butonulMeu"+id_turneu).value=response;
+                  document.getElementById("butonulMeu"+id_turneu).style.color="red";
+                }
                 
             }
         }
@@ -39,8 +71,6 @@ $conectare=deschideConexiunea();
 $sql="SELECT * FROM tournament";
 $result=$conectare->query($sql);
 
-$today=strtotime(date("Y-m-d"));
-$participa=TRUE;
 if($result->num_rows >0){
     while($row = $result->fetch_assoc()) {
         $participa=TRUE;
@@ -56,55 +86,23 @@ if($result->num_rows >0){
         $tip=$row['type'];
         $locatie=$row['locatie'];
         $titlu_turneu=$row['titlu_turneu'];
-
-
-        //verific daca turneul nu e finalizat deja
-        if($today > $data_turneu_str)
-        {
-            $participa=FALSE;
-        }
-
-        //verific daca mai sunt locuri la turneu
-       $sql1="SELECT count(*) FROM battles WHERE id_turneu='$id_turneu'";
-       $result1=$conectare->query($sql1);
-       $row1 = $result1->fetch_assoc();
-       $locuri=$row1['count(*)'];
-       if($locuri>=$nr_jucatori){
-           $participa=FALSE;
-       }
-
-
-       if($participa==TRUE){
+        echo $id_user;
 
        echo '
        <div class="chenarTurneu">
         <h1 class="titluTurneu">'.$titlu_turneu.'</h1> 
         <p class="numeCreator">made by '.$nume_creator.' at '.$data_creare.'</p>
-        
-        <script> getValue('.$id_user.','.$id_turneu.','.$data_turneu.','.$nr_jucatori.');</script>
-        <input id="butonulMeu'.$id_turneu.'" type="button" class="buttonJOIN">
+
+        <script> getValue('.$id_user.','.$id_turneu.','.$data_turneu_str.','.$nr_jucatori.');</script>
+        <input id="butonulMeu'.$id_turneu.'" type="button" class="buttonJOIN" onclick="changeValue(this.value,'.$id_user.','.$id_turneu.')">
+
         <br><br>
         <p class="infos">Date: '.$data_turneu.'</p>
         <p class="infos">Game: '.$nume_joc.'</p>
         <p class="infos">Location: '.$locatie.'</p>
         <p class="infos">Prize: '.$premiu.'</p>    
         </div>';
-       }
-       else
-       {
-        echo '
-        <div class="chenarTurneu">
-         <h1 class="titluTurneu">'.$titlu_turneu.'</h1> 
-         <p class="numeCreator">made by '.$nume_creator.' at '.$data_creare.'</p>
-         
-         
-         <br><br>
-         <p class="infos">Date: '.$data_turneu.'</p>
-         <p class="infos">Game: '.$nume_joc.'</p>
-         <p class="infos">Location: '.$locatie.'</p>
-         <p class="infos">Prize: '.$premiu.'</p>    
-         </div>';
-       }
+       
     
     }
 }

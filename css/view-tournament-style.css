@@ -31,22 +31,19 @@ h1.titluTurneu{
     display:inline;
 }
 
-.button{
+.buttonJOIN{
 	font-family: Family-Guy;
 	font-size: 20px;
 	padding: 5px 10px;
 	border-radius: 2px;
 	color:black;
-	text-decoration: none;
+    text-decoration: none;
+    background-color: white;
 	text-shadow: 1px 1px 1px #fff;
 	cursor: pointer;
-	transition: all 0.2s ease-out;
-}
-.button[target=participa]{
-    background-color: #00b386;
-}
-
-.button[target=nuparticipa]{
-    background-color: #cc0000;
+    transition: all 0.2s ease-out;
+    display: inline;
+    margin-left:30%;
+    
 }
 

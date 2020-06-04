@@ -1,10 +1,10 @@
 <?php
 
-function addViews($type)
+function addViews($id)
 {
     
     $conectare=deschideConexiunea();
-    $sql="UPDATE games SET views=views+1 WHERE type='$type'";
+    $sql="UPDATE games SET views=views+1 WHERE id='$id'";
     $result=$conectare->query($sql);
 }
 

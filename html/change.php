@@ -15,7 +15,7 @@ if ($tip== 'LIKE') {
     $response='DISLIKE';
 }
 else if($tip=='DISLIKE'){
-    $sql="DELETE FROM likes WHERE id_game='$id_joc' ";
+    $sql="DELETE FROM likes WHERE id_game='$id_joc' AND id_user='$id_user'";
     $result=$conectare->query($sql);
     $sql2="UPDATE games SET likes=likes-1 WHERE id='$id_joc'";
     $result2=$conectare->query($sql2);
