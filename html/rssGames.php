@@ -1,14 +1,19 @@
 <?php
+header("Content-type: text/xml");
 require '../php/conectare.php';
 
 $conectare=deschideConexiunea();
-$typeGame=$_GET['typeGame'];
 $typeTop=$_GET['typeTop'];
+$typeGame=$_GET['typeGame'];
 
 if(isset($typeTop)){
     if($typeTop=="likes"){
         //afisez topul dupa likes
-        $sql="SELECT * FROM games WHERE type='$typeGame' ORDER BY likes DESC LIMIT 5";
+        if($typeGame=='all')
+           $sql="SELECT * FROM games ORDER BY likes DESC LIMIT 5"; 
+        else
+            $sql="SELECT * FROM games WHERE type='$typeGame' ORDER BY likes DESC LIMIT 5";
+           
     }
     else if($typeTop=="views"){
         //afisez topul dupa views
@@ -17,11 +22,11 @@ if(isset($typeTop)){
 
     $typeGameCaps=strtoupper($typeGame);
     $typeTopCaps=strtoupper($typeTop);
-    echo '
-         <h1 class="titluTop">TOP 5 '.$typeGameCaps.' GAMES  AFTER '.$typeTopCaps.'</h1>
-         <a href="rssGames.php?typeTop='.$typeTop.'&typeGame='.$typeGame.'">
-            <button class="buttonRSS">RSS</button>
-         </a>
+    echo '<?xml version="1.0" encoding="UTF-8" ?>';
+              echo' <rss version="2.0">
+                 <channel>
+                 <title>TOP 5 '.$typeGameCaps.' GAMES  AFTER '.$typeTopCaps.'</title>
+                 <description>Top 5 games - RSS format</description>
         ';
 
     $result=$conectare->query($sql);
@@ -35,23 +40,23 @@ if(isset($typeTop)){
            $result2=$conectare->query($sql2);
            $img=mysqli_fetch_array($result2);
            echo '
-           <div class="game">
-              <a href="pagina-joc.php?id='.$id.'">
-              <img src="../images/'.$img['img1'].'.jpg"/>
-              </a>
-              <p class="gameTitle">'.$name.'</p>
-              ';
-              if($typeTop=='likes')
+               <item>
+               <title>'.$name.'</title>'; 
+               if($typeTop=='likes')
               echo'
-              <p class="info">LIKES('.$likes.')</p>';
+              <description>LIKES('.$likes.')</description>';
               else
                  echo '
-              <p class="info">VIEWS('.$views.')</p>';
-            echo '
-           </div>
-           ';
+                 <description>VIEWS('.$views.')</description>';
+              echo '
+               </item>';
         }
     }
+
+    echo '
+    </channel>
+    </rss>
+    ';
 
 }
 

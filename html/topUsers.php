@@ -6,6 +6,9 @@ $sql="SELECT * FROM user ORDER BY tournaments DESC LIMIT 5";
 $result=$conectare->query($sql);
 echo '
 <h1 class="titluTop">TOP 5 USERS</h1>
+<a href="rssUsers.php?">
+            <button class="buttonRSS">RSS</button>
+ </a>
 ';
 if($result->num_rows>0){
     while($row = $result->fetch_assoc()) {

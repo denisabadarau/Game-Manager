@@ -5,6 +5,9 @@ $sql="SELECT * FROM games ORDER BY likes DESC LIMIT 5";
 $result=$conectare->query($sql);
 echo '
 <h1 class="titluTop">GENERAL TOP AFTER LIKES</h1>
+<a href="rssGames.php?typeTop=likes&typeGame=all">
+<button class="buttonRSS">RSS</button>
+</a>
 ';
 if($result->num_rows>0){
             while($row = $result->fetch_assoc()) {

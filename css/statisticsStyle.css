@@ -37,6 +37,16 @@
       text-align: center;
       margin: 5% 0 4% 40%;
     }
+    .buttonRSS {
+      /*font-family: Family-Guy;*/
+      font-size: 15px;
+      background-color: #e65c00;
+      color:white;
+      width:6%;
+      text-align: center;
+      border:1px solid grey;
+     float:right;
+    }
 
     .top{
         border-style: none;
@@ -67,7 +77,6 @@
       color:grey;
     }
     .game img{
-     display: inline;
       width:25%;
       vertical-align:middle;
       margin-bottom: 10px;
@@ -78,5 +87,5 @@
       text-align: center;
       font-family: Chunk Five Print;
       font-size: 30px;
-
+    
     }
