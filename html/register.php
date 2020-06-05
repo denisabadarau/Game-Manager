@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html>
     <head>
-        <title>AdelinaPage</title>
+    <title> Game Manager </title>
             <link rel = "stylesheet" type="text/css" href = "../css/registerStyle.css">
     </head>
     <body>

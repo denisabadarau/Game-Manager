@@ -1,7 +1,7 @@
 <?php
 require '../php/conectare.php';
 $conectare=deschideConexiunea();
-$sql="SELECT * FROM games ORDER BY likes DESC LIMIT 10";
+$sql="SELECT * FROM games ORDER BY likes DESC LIMIT 5";
 $result=$conectare->query($sql);
 echo '
 <h1 class="titluTop">GENERAL TOP AFTER LIKES</h1>
@@ -16,8 +16,11 @@ if($result->num_rows>0){
                $img=mysqli_fetch_array($result2);
                echo '
                <div class="game">
+              <a href="pagina-joc.php?id='.$id.'">
                   <img src="../images/'.$img['img1'].'.jpg"/>
-                  <p class="info">'.$name.'</p>
+                  </a>
+                  <p class="gameTitle">'.$name.'</p>
+              <p class="info">LIKES('.$likes.')</p>
                </div>
                ';
             }

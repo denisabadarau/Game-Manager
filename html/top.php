@@ -7,9 +7,11 @@
     <link href="../css/statisticsStyle.css" rel="stylesheet">
     <script type="text/javascript" src="../js/gettopjs.js"></script>
     <script type="text/javascript" src="../js/gamestypejs.js"></script>
+    <script type="text/javascript" src="../js/getTopUsers.js"></script>
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> My page </title>
+    <title> Game Manager </title>
+    
 </head>
 <body>
 
@@ -40,6 +42,9 @@
 </select>
 </form>
 </div>
+<br>
+
+<input id="buttonTop" class="buttonTOP" value="TOP USERS" onclick="getTopUsers()">
 
 <div id="top" class="top">
  <?php

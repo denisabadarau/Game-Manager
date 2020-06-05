@@ -15,19 +15,36 @@ if(isset($typeTop)){
         $sql="SELECT * FROM games WHERE type='$typeGame' ORDER BY views DESC LIMIT 5";
     }
 
+    $typeGameCaps=strtoupper($typeGame);
+    $typeTopCaps=strtoupper($typeTop);
+    echo '
+         <h1 class="titluTop">TOP 5 '.$typeGameCaps.' GAMES  AFTER '.$typeTopCaps.'</h1>
+        ';
+
     $result=$conectare->query($sql);
     if($result->num_rows>0){
         while($row = $result->fetch_assoc()) {
            $id=$row['id'];
            $name=strtoupper($row['name']);
            $likes=$row['likes'];
+           $views=$row['views'];
            $sql2="SELECT img1 FROM images WHERE id_game='$id'";
            $result2=$conectare->query($sql2);
            $img=mysqli_fetch_array($result2);
            echo '
            <div class="game">
+              <a href="pagina-joc.php?id='.$id.'">
               <img src="../images/'.$img['img1'].'.jpg"/>
-              <p class="info">'.$name.'</p>
+              </a>
+              <p class="gameTitle">'.$name.'</p>
+              ';
+              if($typeTop=='likes')
+              echo'
+              <p class="info">LIKES('.$likes.')</p>';
+              else
+                 echo '
+              <p class="info">VIEWS('.$views.')</p>';
+            echo '
            </div>
            ';
         }

@@ -1,68 +1,14 @@
-<script>
-function getValue(id_user,id_turneu,data_turneu,nr_jucatori){
-        var ajaxRequest= new XMLHttpRequest();
-        alert("m am apelat1");
+<head>
+<script type="text/javascript" src="../js/changeValue.js"></script>
+    <script type="text/javascript" src="../js/getValue.js"></script>
+    <link href="../css/view-tournament-style.css" rel="stylesheet">
+    <link href="../css/meniu-style.css" rel="stylesheet">
+    <link href="../css/boardGamesStyle.css" rel="stylesheet">
+    <link href="../css/modalStyle.css" rel="stylesheet">
+    <link href="../css/statisticsStyle.css" rel="stylesheet">
+    <link href="../css/battles.css" rel="stylesheet">
 
-        ajaxRequest.onreadystatechange = function(){
-            if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
-                var response =ajaxRequest.responseText;
-                
-            //alert(response);
-                if(response=="JOIN")
-                  {
-                      document.getElementById("butonulMeu"+id_turneu).value=response;
-                      document.getElementById("butonulMeu"+id_turneu).style.color="green";
-
-                      }
-                else 
-                    if(response=="CAN'T JOIN")
-                    {
-                        document.getElementById("butonulMeu"+id_turneu).style.display="none";
-                        
-                        }
-                else 
-                   if(response=="UNJOIN")
-                { document.getElementById("butonulMeu"+id_turneu).value=response;
-                  document.getElementById("butonulMeu"+id_turneu).style.color="red";
-                }
-                
-            }
-        }
-    
-        ajaxRequest.open("GET","getturneu.php?id_user="+id_user+"&id_turneu="+id_turneu+"&data_turneu="+data_turneu+"&nr_jucatori="+nr_jucatori,true);
-        ajaxRequest.send();
-    }
-
-
-    function changeValue(str,id_user,id_turneu){
-        var ajaxRequest= new XMLHttpRequest();
-        alert("m am apelat2");
-
-        ajaxRequest.onreadystatechange = function(){
-            if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
-                var response =ajaxRequest.responseText;
-                if(response=="JOIN")
-                  {
-                      document.getElementById("butonulMeu"+id_turneu).value=response;
-                      document.getElementById("butonulMeu"+id_turneu).style.color="green";
-
-                      }
-                else 
-                   if(response=="UNJOIN")
-                { document.getElementById("butonulMeu"+id_turneu).value=response;
-                  document.getElementById("butonulMeu"+id_turneu).style.color="red";
-                }
-                
-            }
-        }
-        ajaxRequest.open("GET","changeturneu.php?id_user="+id_user+"&id_turneu="+id_turneu+"&tip="+str,true);
-        ajaxRequest.send();
-    }
-
-
-</script>
-
-
+</head>
 <?php
 require '../php/conectare.php';
 $id_user=$_GET['id_user'];
@@ -86,14 +32,13 @@ if($result->num_rows >0){
         $tip=$row['type'];
         $locatie=$row['locatie'];
         $titlu_turneu=$row['titlu_turneu'];
-        echo $id_user;
 
        echo '
        <div class="chenarTurneu">
         <h1 class="titluTurneu">'.$titlu_turneu.'</h1> 
         <p class="numeCreator">made by '.$nume_creator.' at '.$data_creare.'</p>
-
-        <script> getValue('.$id_user.','.$id_turneu.','.$data_turneu_str.','.$nr_jucatori.');</script>
+        
+        <script> getValueButton('.$id_user.','.$id_turneu.','.$data_turneu_str.','.$nr_jucatori.');</script>
         <input id="butonulMeu'.$id_turneu.'" type="button" class="buttonJOIN" onclick="changeValue(this.value,'.$id_user.','.$id_turneu.')">
 
         <br><br>

@@ -24,7 +24,8 @@ addViews($id_game);
     <link href="../css/statisticsStyle.css" rel="stylesheet">
     <link href="../css/paginacategorie.css" rel="stylesheet">
     <meta charset="utf-8" >
-    <title> My page </title>
+    <title> Game Manager </title>
+    
 </head>
 <body>
     <?php
