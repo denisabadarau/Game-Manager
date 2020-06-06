@@ -26,7 +26,7 @@ h1.titluTurneu{
 }
 .infos{
     font-family: Chunk Five Print;
-    font-size:16px;
+    font-size:15px;
     margin-left: 10px;    
     display:inline;
 }
@@ -42,8 +42,11 @@ h1.titluTurneu{
 	text-shadow: 1px 1px 1px #fff;
 	cursor: pointer;
     transition: all 0.2s ease-out;
-    display: inline;
-    margin-left:30%;
+    /*display: inline;*/
+    margin-right:2%;
+    margin-top:2%;
+
+    float:right;
     
 }
 

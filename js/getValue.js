@@ -1,5 +1,5 @@
 function getValueButton(id_user,id_turneu,data_turneu,nr_jucatori){
-    //alert("m am apelat1");
+    alert("m am apelat1");
         var ajaxRequest= new XMLHttpRequest();
 
         ajaxRequest.onreadystatechange = function(){

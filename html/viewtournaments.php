@@ -42,10 +42,10 @@ if($result->num_rows >0){
         <input id="butonulMeu'.$id_turneu.'" type="button" class="buttonJOIN" onclick="changeValue(this.value,'.$id_user.','.$id_turneu.')">
 
         <br><br>
-        <p class="infos">Date: '.$data_turneu.'</p>
-        <p class="infos">Game: '.$nume_joc.'</p>
-        <p class="infos">Location: '.$locatie.'</p>
-        <p class="infos">Prize: '.$premiu.'</p>    
+        <p class="infos"><span style="font-size:23px">Date: </span>'.$data_turneu.'</p>
+        <p class="infos"><span style="font-size:23px">Game: </span>'.$nume_joc.'</p>
+        <p class="infos"><span style="font-size:23px">Location: </span>'.$locatie.'</p>
+        <p class="infos"><span style="font-size:23px">Prize: </span>'.$premiu.'</p>
         </div>';
        
     

@@ -19,7 +19,7 @@ if(isset($typeTop)){
     $typeTopCaps=strtoupper($typeTop);
     echo '
          <h1 class="titluTop">TOP 5 '.$typeGameCaps.' GAMES  AFTER '.$typeTopCaps.'</h1>
-         <a href="rssGames.php?typeTop='.$typeTop.'&typeGame='.$typeGame.'">
+         <a href="rssGames.php?typeTop='.$typeTop.'&typeGame='.$typeGame.'" target="_blank">
             <button class="buttonRSS">RSS</button>
          </a>
         ';
