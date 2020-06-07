@@ -84,6 +84,27 @@ session_start();
       ';
       ?>
 
+<div class="dropdown">
+  <button class="dropbtn">Select category</button>
+  <div class="dropdown-content">
+     <?php
+      $db=deschideConexiunea();
+      $sql1="SELECT distinct category from games where type='".$_GET["c"]."'";
+      $result1=$db->query($sql1);
+      $row1=$result1->fetch_assoc();
+      $sql = "SELECT DISTINCT type FROM games WHERE category='".$row1['category']."'";
+      $result = $db->query($sql);
+      if ($result->num_rows > 0){
+        while($row = $result->fetch_assoc()) {
+        echo
+        '<a href="pagina-categorie.php?c='.$row['type'].'">'.$row['type'].'</a>';
+        }
+      }
+      
+      ?>
+    </div>
+</div>
+
 <?php
   $db=deschideConexiunea();
   //verific daca utilizatorul este logat pe cont, in caz afirmativ preiau id ul
@@ -155,7 +176,5 @@ session_start();
     }
   }
 ?>
-
-    
 </body>
 </html>

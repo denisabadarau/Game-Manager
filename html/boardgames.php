@@ -34,7 +34,27 @@ include '../php/view.php';
       <?php
       include 'caruselBoardGames.html';
       ?>
+
+<div class="dropdown">
+  <button class="dropbtn">Select category</button>
+  <div class="dropdown-content">
+     <?php
+      $db=deschideConexiunea();
+      $sql = "SELECT DISTINCT type FROM games WHERE category='online'";
+      $result = $db->query($sql);
+      if ($result->num_rows > 0){
+        while($row = $result->fetch_assoc()) {
+        echo
+        '<a href="pagina-categorie.php?c='.$row['type'].'">'.$row['type'].'</a>';
+        }
+      }
+      ?>
+    </div>
+</div>
+
+
     <p class="title">Most popular games</p>
+
     <?php
   $db=deschideConexiunea();
   $sql = "SELECT id,minidescriere FROM games where category='board' order by likes DESC limit 9";
