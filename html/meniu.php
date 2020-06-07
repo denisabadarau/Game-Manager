@@ -13,6 +13,7 @@ session_start();
     <link href="../css/paginacategorie.css" rel="stylesheet">
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title> Game Manager </title>
     
 </head>
@@ -121,6 +122,4 @@ session_start();
 <a href="https://twitter.com/explore" class="fa fa-twitter"></a>
 <a href="https://www.youtube.com/?gl=RO&hl=ro" class="fa fa-youtube"></a>
 <a href="https://www.instagram.com/mirela.adamache/?hl=en" class="fa fa-instagram"></a>
-    </body>
-
-</html>
+<a href="https://www.google.com/" class="fa fa-google"></a>
