@@ -8,17 +8,69 @@ if(isset($_SESSION['id']))$id_user=$_SESSION['id'];
   <head>
     <link href="../css/meniu-style.css" rel="stylesheet">
     <link href="../css/boardGamesStyle.css" rel="stylesheet">
-    <link href="../css/paginaJocuriStyle.css" rel="stylesheet">
     <link href="../css/modalStyle.css" rel="stylesheet">
     <link href="../css/statisticsStyle.css" rel="stylesheet">
     <link href="../css/battles.css" rel="stylesheet">
     <link href="../css/view-tournament-style.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/changeValue.js"></script>
+    <script type="text/javascript" src="../js/getValue.js"></script>
+
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title> My page </title>
+
+    <title> Game Manager </title>
 </head>
 <body>
+<script>
+function getValuePlayers(id_turneu){
+    //alert("m am apelat");
+    var ajaxRequest= new XMLHttpRequest();
+        ajaxRequest.onreadystatechange = function(){
+            if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
+                var response =ajaxRequest.responseText;
+               document.getElementById("gamer"+id_turneu).innerHTML=response;
+                
+        }
+        }
+    
+        ajaxRequest.open("GET","../html/getplayers.php?id_turneu="+id_turneu,true);
+        ajaxRequest.send();
+
+
+}
+
+
+
+function changeValue(str,id_user,id_turneu){
+        var ajaxRequest= new XMLHttpRequest();
+        //alert("m am apelat2");
+
+        ajaxRequest.onreadystatechange = function(){
+            if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
+                var response =ajaxRequest.responseText;
+                if(response=="JOIN")
+                  {
+                      document.getElementById("butonulMeu"+id_turneu).value=response;
+                      document.getElementById("butonulMeu"+id_turneu).style.color="green";
+
+                      }
+                else 
+                   if(response=="UNJOIN")
+                { document.getElementById("butonulMeu"+id_turneu).value=response;
+                  document.getElementById("butonulMeu"+id_turneu).style.color="red";
+                }
+
+                getValuePlayers(id_turneu);
+                
+            }
+        }
+        ajaxRequest.open("GET","../html/changeturneu.php?id_user="+id_user+"&id_turneu="+id_turneu+"&tip="+str,true);
+        ajaxRequest.send();
+    }
+</script>
+
+
+
     <div class="logout-box">  
       <input type="submit" name="submit" value="Logout">
       <a href = "logout.inc.php"></a>
@@ -45,9 +97,65 @@ if(isset($_SESSION['id']))$id_user=$_SESSION['id'];
   echo 'adelina';
   ?>
   </div>
-  <div class="comment">
+  <div class="comment ">
   <?php
-  echo 'denisa';
+ require '../php/conectare.php';
+ $conectare=deschideConexiunea();
+ 
+ $sql="SELECT * FROM tournament ORDER BY data_creare DESC";
+ $result=$conectare->query($sql);
+
+ if($result->num_rows >0){
+     while($row = $result->fetch_assoc()) {
+         $participa=TRUE;
+         $id_turneu=$row['id_turneu'];
+         $nume_joc=$row['nume_joc'];
+         $nume_creator=$row['nume_creator'];
+         $data_creare=$row['data_creare'];
+         $data_turneu=$row['data_turneu'];
+         $data_turneu_str=strtotime($row['data_turneu']);
+         $nr_jucatori=$row['nr_jucatori'];
+         $premiu=$row['premiu'];
+         $categorie=$row['category'];
+         $tip=$row['type'];
+         $locatie=$row['locatie'];
+         $titlu_turneu=$row['titlu_turneu'];
+ 
+          
+        echo '
+        <div class="chenarTurneu">
+         <h1 class="titluTurneu">'.$titlu_turneu.'</h1> 
+         <p class="numeCreator">made by <span style="color: #4d4d4d">'.$nume_creator.'</span> at '.$data_creare.'</p>
+
+         <script> getValueButton('.$id_user.','.$id_turneu.','.$data_turneu_str.','.$nr_jucatori.');</script>
+         <input id="butonulMeu'.$id_turneu.'" type="button" class="buttonJOIN" onclick="changeValue(this.value,'.$id_user.','.$id_turneu.'),getValuePlayers('.$id_turneu.')">
+ 
+         <br><br>
+         <p class="infos"><span style="font-size:23px">Date: </span>'.$data_turneu.'</p>
+         <p class="infos"><span style="font-size:23px">Game: </span>'.$nume_joc.'</p>
+         <p class="infos"><span style="font-size:23px">Location: </span>'.$locatie.'</p>
+         <p class="infos"><span style="font-size:23px">Prize: </span>'.$premiu.'</p>
+         <br>
+         <script>getValuePlayers('.$id_turneu.');</script>
+         <p class="infos" ><span style="font-size:23px">Players: </span> <span id="gamer'.$id_turneu.'"></span> /'. $nr_jucatori.' </p>
+         <br>
+         ';
+         //verific daca turneul nu e finalizat deja
+         $today=strtotime(date("Y-m-d"));
+         if($today >= $data_turneu_str) {
+          echo '<p class="infos"><span style="font-size:23px">Mode: </span><span style="color: #e60000">FINISHED</span></p>';
+          }
+          else {
+          echo '<p class="infos" ><span style="font-size:23px">Mode: </span><span style="color:green">AVAILABLE</span></p>';
+           
+            }
+         
+         echo '
+         </div>';
+        
+     
+     }
+ }
   ?>
   </div>
   <div class="comment" id="com">
@@ -112,19 +220,6 @@ function displayTab(slideIndex) {
   xhttp.send();
     }
 
-    function viewtournaments(id_user){
-      var ajaxRequest= new XMLHttpRequest();
-        ajaxRequest.onreadystatechange = function(){
-            if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
-                var response =ajaxRequest.responseText;
-                document.getElementById("demo").innerHTML=response;
-            }
-        }
-    
-        ajaxRequest.open("GET","viewtournaments.php?id_user="+id_user,true);
-        ajaxRequest.send();
-
-    }
     function viewcomments(){
       var ajaxRequest= new XMLHttpRequest();
         ajaxRequest.onreadystatechange = function(){
@@ -138,6 +233,10 @@ function displayTab(slideIndex) {
         ajaxRequest.send();
 
     }
+
+
+
+    
 </script>
 </body>
 </html>

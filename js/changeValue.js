@@ -1,6 +1,8 @@
+
+
 function changeValue(str,id_user,id_turneu){
         var ajaxRequest= new XMLHttpRequest();
-        alert("m am apelat2");
+        //alert("m am apelat2");
 
         ajaxRequest.onreadystatechange = function(){
             if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
@@ -16,6 +18,8 @@ function changeValue(str,id_user,id_turneu){
                 { document.getElementById("butonulMeu"+id_turneu).value=response;
                   document.getElementById("butonulMeu"+id_turneu).style.color="red";
                 }
+
+                
                 
             }
         }
