@@ -34,7 +34,12 @@ include '../php/likefunctions.php';
         </div>
         <br>
         <br>
-       
+
+ 
+ <form method="post" action="exportdatacsv.php" >  
+ <input type="submit" name="export" value="Export Statistics To CSV File" class="buttonexport" />  
+ </form>
+
 <div class="containerSelect">
 <form action="#" method="post">
 <label>Chart:</label>
