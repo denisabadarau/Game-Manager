@@ -37,6 +37,9 @@
       text-align: center;
       margin: 5% 0 4% 40%;
     }
+    .buttonTOP:hover {
+      transform: scale(1.2,1.2);
+  }
     .buttonRSS {
       /*font-family: Family-Guy;*/
       font-size: 15px;
@@ -47,6 +50,9 @@
       border:1px solid grey;
      float:right;
     }
+    .buttonRSS:hover {
+      transform: scale(1.2,1.2);
+  }
 
     .top{
         border-style: none;

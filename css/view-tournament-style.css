@@ -50,3 +50,7 @@ h1.titluTurneu{
     
 }
 
+.buttonJOIN:hover {
+    transform: scale(1.2,1.2);
+}
+

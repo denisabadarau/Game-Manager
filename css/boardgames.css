@@ -13,6 +13,7 @@
   /*padding: 5px;*/
 }
 
+
 /* Clearfix (clear floats) */
 .row::after {
   content: "";
@@ -23,6 +24,11 @@
 .column img{
   width:100%;
 
+}
+
+.column img:hover {
+  transform: scale(1.1,1.1);
+  box-shadow: 10px 10px 5px grey;
 }
 .desc {
   padding: 15px;

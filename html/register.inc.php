@@ -26,11 +26,10 @@ if ( !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['
     }
     else {
         //comanda noastra care va ajunge la baza de date
-    $sql = "INSERT INTO user (username, password, email) VALUES ('$username', '$password_hashed', '$email')";
+    $sql = "INSERT INTO user (username, password, email, profile_img_path, bio) VALUES ('$username', '$password_hashed', '$email', '', '')";
 
     //variabila care aj la baza de date
-        $result = $conectare -> query($sql);
-    
+        $result = $conectare -> query($sql); 
         header("Location: login.php");
     }
 }
