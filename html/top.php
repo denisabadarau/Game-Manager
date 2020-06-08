@@ -11,7 +11,7 @@
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Game Manager </title>
-    
+    <input type="button" class="buttonFeatures" style="margin-left:90%" value="AdminPage" onclick="location.href='admin.php'">
 </head>
 <body>
 

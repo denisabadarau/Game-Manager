@@ -4,7 +4,7 @@
 function gamesTypeAfterLikes($category)
 {
     $conectare=deschideConexiunea();
-    $sql="SELECT games.type FROM likes join games on likes.id_game=games.id where games.category='$category' group by games.type";
+    $sql="SELECT DISTINCT type FROM  games where category='$category'";
     $result=$conectare->query($sql);
     $types=[];
     if ($result->num_rows > 0) {
@@ -19,7 +19,7 @@ return json_encode($types);
 function gamesLikesNoAfterLikes($category)
 {
     $conectare=deschideConexiunea();
-    $sql="SELECT count(likes.id_game) as likes FROM likes join games on likes.id_game=games.id where games.category='$category' group by games.type";
+    $sql="SELECT sum(likes) as likes FROM games  where games.category='$category' group by type";
     $result=$conectare->query($sql);
     $likes=[];
     if ($result->num_rows > 0) {

@@ -8,10 +8,12 @@ if(isset($_SESSION['id']))$id_user=$_SESSION['id'];
   <head>
     <link href="../css/meniu-style.css" rel="stylesheet">
     <link href="../css/boardGamesStyle.css" rel="stylesheet">
-    <link href="../css/modalStyle.css" rel="stylesheet">
-    <link href="../css/statisticsStyle.css" rel="stylesheet">
     <link href="../css/battles.css" rel="stylesheet">
     <link href="../css/view-tournament-style.css" rel="stylesheet">
+    <link href="../css/meniu-style.css" rel="stylesheet">
+    <link href="../css/boardGamesStyle.css" rel="stylesheet">
+    <link href="../css/modalStyle.css" rel="stylesheet">
+    <link href="../css/statisticsStyle.css" rel="stylesheet">
     <script type="text/javascript" src="../js/changeValue.js"></script>
     <script type="text/javascript" src="../js/getValue.js"></script>
 
@@ -19,6 +21,7 @@ if(isset($_SESSION['id']))$id_user=$_SESSION['id'];
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title> Game Manager </title>
+    <input type="button" class="buttonFeatures" style="margin-left:90%" value="AdminPage" onclick="location.href='admin.php'">
 </head>
 <body>
 <script>
