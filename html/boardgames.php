@@ -1,6 +1,8 @@
 <?php
 include '../php/conectare.php';
 include '../php/view.php';
+session_start();
+
 ?>
 <!DOCTYPE html>
     <html lang="en">

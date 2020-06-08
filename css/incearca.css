@@ -66,10 +66,30 @@
   
   a {
 	text-decoration: none;
-	font-size: 22px;
+	/*font-size: 22px;*/
 	color: black;
   }
   
   button.save:hover, a:hover {
 	opacity: 0.7;
   }
+  .inputStyle{
+	font-family: Chunk Five Print;
+	font-size:18px;
+  }
+  .buttonTurneu{
+	font-family: Family-Guy;
+	font-size: 20px;
+	padding: 5px 10px;
+	border-radius: 2px;
+	color:black;
+    background-color: white;
+	text-shadow: 1px 1px 1px #fff;
+    /*display: inline;*/
+    margin-left:20%;
+    margin-top:2%;
+    width:17%;
+  }
+  .buttonTurneu:hover {
+    transform: scale(1.1,1.1);
+}

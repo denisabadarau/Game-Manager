@@ -2,6 +2,8 @@
 include '../php/conectare.php';
 include '../php/view.php';
 include '../php/likefunctions.php';
+session_start();
+
 ?>
 <!DOCTYPE html>
     <html lang="en">

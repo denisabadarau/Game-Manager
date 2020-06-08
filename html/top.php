@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
     <html lang="en">
   <head>
@@ -19,6 +23,7 @@
 
 <?php
     include 'menu.php';
+
     ?>
 <div class="containerSelect">
 <form>

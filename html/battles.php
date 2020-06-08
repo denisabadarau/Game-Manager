@@ -1,7 +1,7 @@
 <?php
 session_start();
 //verific daca utilizatorul este logat pe cont, in caz afirmativ preiau id ul
-if(isset($_SESSION['id']))$id_user=$_SESSION['id'];
+
 ?>
 <!DOCTYPE html>
     <html lang="en">
@@ -14,7 +14,8 @@ if(isset($_SESSION['id']))$id_user=$_SESSION['id'];
     <link href="../css/view-tournament-style.css" rel="stylesheet">
     <script type="text/javascript" src="../js/changeValue.js"></script>
     <script type="text/javascript" src="../js/getValue.js"></script>
-	<link rel = "stylesheet" type="text/css" href = "../css/incearca.css">
+    <link rel = "stylesheet" type="text/css" href = "../css/incearca.css">
+
 
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,7 +70,119 @@ function changeValue(str,id_user,id_turneu){
         ajaxRequest.send();
     }
 </script>
+<script>
+//https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_dots
+function displayTab(slideIndex) {
+        var i;
+        var content = document.getElementsByClassName("comment");
+        var tabs = document.getElementsByClassName("button2");
+        for (i = 0; i < content.length; i++) {
+            content[i].style.display = "none";
+        }
+        for (i = 0; i < tabs.length; i++) {
+            tabs[i].style.color = "black";
+            tabs[i].style.backgroundColor = "white";
+            tabs[i].style.opacity = "70%";
+            
+        }
+        content[slideIndex - 1].style.display = "block";
+        tabs[slideIndex - 1].style.color = "black";
+        tabs[slideIndex - 1].style.backgroundColor = "slategray";
+        tabs[slideIndex - 1].style.opacity = "100%";
+    }
+    </script>
+    <script>
+    function LoadCom() {
+        return new Promise(resolve => {
+            var xhttp;
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("com").innerHTML += this.responseText;
+                    resolve();
+                }
+            };
+            xhttp.open("GET", "combattleajax2.php", true);
+            xhttp.send();
+        });
+    }
 
+    </script>
+    <script>
+
+
+    function afisbattle(id_user){
+    var x=document.getElementById("subject").value;
+    if(x!=""&&x!=null)
+    afisbattle1(x,id_user);
+    }
+    </script>
+    <script>
+    
+    function afisbattle1(x,id_user){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("com2").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "comments2.php?com="+x+"&id_user="+id_user, true);
+  xhttp.send();
+    }
+    </script>
+    <script>
+
+    function viewcomments(){
+      var ajaxRequest= new XMLHttpRequest();
+        ajaxRequest.onreadystatechange = function(){
+            if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
+                var response =ajaxRequest.responseText;
+                document.getElementById("chenarcom").innerHTML=response;
+            }
+        }
+    
+        ajaxRequest.open("GET","combattleajax2.php",true);
+        ajaxRequest.send();
+
+    }
+
+
+
+    
+</script>
+
+
+<script>
+function GetCategories(game_type){
+      var ajaxRequest= new XMLHttpRequest();
+        ajaxRequest.onreadystatechange = function(){
+            if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
+                var response = ajaxRequest.responseText;
+                document.getElementById("game_categories").innerHTML=response;
+            }
+        }
+        //pasez tipul
+        ajaxRequest.open("GET","gameCategoriesAjax.php?type="+game_type,true);
+        ajaxRequest.send();
+
+    }
+    </script>
+    <script>
+    function GetGames(game_category){
+      var ajaxRequest= new XMLHttpRequest();
+        ajaxRequest.onreadystatechange = function(){
+            if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
+                var response = ajaxRequest.responseText;
+                document.getElementById("game_names").innerHTML=response;
+            }
+        }
+        //pasez o categorie
+        ajaxRequest.open("GET","gameNamesAjax.php?category="+game_category,true);
+        ajaxRequest.send();
+
+    }
+</script>
 
 
     <div class="logout-box">  
@@ -79,6 +192,7 @@ function changeValue(str,id_user,id_turneu){
 
     <?php
     include 'menu.php';
+    if(isset($_SESSION['id']))$id_user=$_SESSION['id'];
     ?>
       
       <div class="container">
@@ -94,7 +208,7 @@ function changeValue(str,id_user,id_turneu){
 </div>
 <div class="chenar" id="demo">
   <div class="comment">
-<form method="POST" action="createTurneu.php"> 
+  <form method="POST" action="createTurneu.php"> 
 <span style= "color:red">
 <?php
   if (isset($_GET['error'])) {
@@ -104,20 +218,20 @@ function changeValue(str,id_user,id_turneu){
 </span>
   <table>
       <tr>
-        <td>Type</td>
+        <td class="inputStyle">Type</td>
         <td>
           <div>
-            <input id="boardgame_type" type="radio" value="board" name="type" onclick= "javascript:GetCategories('board')"> 
-            <label for="boardgame_type" >BoardGame </label>
+            <input  id="boardgame_type" type="radio" value="board" name="type" onclick= "javascript:GetCategories('board')"> 
+            <label style="font-family: Chunk Five Print" for="boardgame_type" >BoardGame </label>
           </div>
           <div>
             <input id="onlinegame_type" type="radio" value="online" name="type" onclick= "javascript:GetCategories('online')">
-            <label for="onlinegame_type" >OnlineGame </label>
+            <label style="font-family: Chunk Five Print" for="onlinegame_type" >OnlineGame </label>
           </div>
         </td>
       </tr>
       <tr>
-        <td> Category </td>
+        <td class="inputStyle"> Category </td>
         <td>
           <!--this.value imi ia valuarea curenta-->
           <select name="category" id ="game_categories" onchange="GetGames(this.value)">
@@ -126,7 +240,7 @@ function changeValue(str,id_user,id_turneu){
         </td>
       </tr>
       <tr id="category_boardgames">
-        <td> Game </td>
+        <td class="inputStyle"> Game </td>
         <td>
           <select name="game" id="game_names">
             <option value ="">selecteaza numele jocului</option> 
@@ -134,44 +248,43 @@ function changeValue(str,id_user,id_turneu){
         </td>
       </tr>
       <tr>
-        <td> Titlu Turneu </td>
+        <td class="inputStyle"> Titlu Turneu </td>
         <td>
           <input type="text" name="titlu" placeholder="Adauga un titlu">
         </td>
       </tr>
       <tr>
-        <td> Numar Jucatori </td>
+        <td class="inputStyle"> Numar Jucatori </td>
         <td>
           <input type="number" name="nr_jucatori" placeholder="Adauga un numar jucatori">
         </td>
       </tr>
       <tr>
-        <td> Locatie Turneu </td>
+        <td class="inputStyle"> Locatie Turneu </td>
         <td>
           <input type="text" name="locatie" placeholder="Adauga o locatie">
         </td>
       </tr>
       <tr>
-        <td> Premiu </td>
+        <td class="inputStyle"> Premiu </td>
         <td>
           <input type="number" name="premiu" placeholder="Adauga un premiu">
         </td>
       </tr>
       <tr>
-        <td> Data turneu </td>
+        <td class="inputStyle"> Data turneu </td>
         <td>
           <input type="date" name="data_turneu">
         </td>
       </tr>
 
     </table>
-    <button type="submit"> Creaza turneu </button>
+    <button type="submit" class="buttonTurneu"> Creaza turneu </button>
   </form>
-
   </div>
   <div class="comment ">
   <?php
- require '../php/conectare.php';
+ require_once '../php/conectare.php';
  $conectare=deschideConexiunea();
  
  $sql="SELECT * FROM tournament ORDER BY data_creare DESC";
@@ -237,104 +350,6 @@ function changeValue(str,id_user,id_turneu){
 </div>
 </div>
 
-<script>
-//https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_dots
-function displayTab(slideIndex) {
-        var i;
-        var content = document.getElementsByClassName("comment");
-        var tabs = document.getElementsByClassName("button2");
-        for (i = 0; i < content.length; i++) {
-            content[i].style.display = "none";
-        }
-        for (i = 0; i < tabs.length; i++) {
-            tabs[i].style.color = "black";
-            tabs[i].style.backgroundColor = "white";
-            tabs[i].style.opacity = "70%";
-            
-        }
-        content[slideIndex - 1].style.display = "block";
-        tabs[slideIndex - 1].style.color = "black";
-        tabs[slideIndex - 1].style.backgroundColor = "slategray";
-        tabs[slideIndex - 1].style.opacity = "100%";
-    }
-    function LoadCom() {
-        return new Promise(resolve => {
-            var xhttp;
-            xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("com").innerHTML += this.responseText;
-                    resolve();
-                }
-            };
-            xhttp.open("GET", "combattleajax2.php", true);
-            xhttp.send();
-        });
-    }
 
-
-
-    function afisbattle(id_user){
-    var x=document.getElementById("subject").value;
-    if(x!=""&&x!=null)
-    afisbattle1(x,id_user);
-    }
-    
-    function afisbattle1(x,id_user){
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("com2").innerHTML =
-      this.responseText;
-    }
-  };
-  xhttp.open("GET", "comments2.php?com="+x+"&id_user="+id_user, true);
-  xhttp.send();
-    }
-
-    function viewcomments(){
-      var ajaxRequest= new XMLHttpRequest();
-        ajaxRequest.onreadystatechange = function(){
-            if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
-                var response =ajaxRequest.responseText;
-                document.getElementById("chenarcom").innerHTML=response;
-            }
-        }
-    
-        ajaxRequest.open("GET","combattleajax2.php",true);
-        ajaxRequest.send();
-
-    }
- function GetCategories(game_type){
-      var ajaxRequest= new XMLHttpRequest();
-        ajaxRequest.onreadystatechange = function(){
-            if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
-                var response = ajaxRequest.responseText;
-                document.getElementById("game_categories").innerHTML=response;
-            }
-        }
-        //pasez tipul
-        ajaxRequest.open("GET","gameCategoriesAjax.php?type="+game_type,true);
-        ajaxRequest.send();
-
-    }
-    function GetGames(game_category){
-      var ajaxRequest= new XMLHttpRequest();
-        ajaxRequest.onreadystatechange = function(){
-            if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
-                var response = ajaxRequest.responseText;
-                document.getElementById("game_names").innerHTML=response;
-            }
-        }
-        //pasez o categorie
-        ajaxRequest.open("GET","gameNamesAjax.php?category="+game_category,true);
-        ajaxRequest.send();
-
-    }
-
-
-
-    
-</script>
 </body>
 </html>

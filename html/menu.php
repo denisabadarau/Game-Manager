@@ -14,7 +14,8 @@ $conectare = deschideConexiunea();
     <!-- The Modal -->
     <div id="myModal" class="modal">
     <?php   
-       $sql = "SELECT * FROM user where id = ".$_SESSION['id'];
+       $id=$_SESSION['id'];
+       $sql = "SELECT * FROM user where id ='$id'";
        $result = $conectare->query($sql);
        //transform ob din msqli intr un obiect user
        //imi transforma linia de query in obiectul user
@@ -113,3 +114,4 @@ window.onclick = function(event) {
           <li><a href="battles.php">Battles</a></li>
           <li><a href="top.php">Top</a></li>
       </ul>
+
