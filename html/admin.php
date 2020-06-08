@@ -15,6 +15,10 @@ session_start();
     <link rel = "stylesheet" type="text/css" href = "../css/incearca.css">
     <script src="../js/deleteuser.js"></script>
     <script src="../js/deleteuserx.js"></script>
+    <script src="../js/deletegame.js"></script>
+    <script src="../js/deletegamex.js"></script>
+
+
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -58,8 +62,7 @@ function rezolvare()
   giveadminuser();
   if(x=="addnewgame")
   alert(x);
-  if(x=="deletegame")
-  alert(x);
+  if(x=="deletegame")deletegame();
   if(x=="changegametype")
   alert(x);
   if(x=="changegamecategory")
