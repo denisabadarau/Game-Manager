@@ -35,10 +35,23 @@ include '../php/likefunctions.php';
         <br>
         <br>
 
- 
+ <div class="row">
+ <div class="butonIndividual">
  <form method="post" action="exportdatacsv.php" >  
- <input type="submit" name="export" value="Export Statistics To CSV File" class="buttonexport" />  
+ <input type="submit" name="export" value="CSV FILE" class="buttonexport" />  
  </form>
+</div>
+<div class="butonIndividual">
+ <form method="post" action="exportdatapdf.php" >  
+ <input type="submit" name="exportpdf" value="PDF FILE" class="buttonexport" />  
+ </form>
+</div>
+<div class="butonIndividual">
+ <form method="post"  >  
+ <input type="submit" name="export" value="DOC BOOK FILE" class="buttonexport" />  
+ </form>
+</div>
+</div>
 
 <div class="containerSelect">
 <form action="#" method="post">

@@ -101,15 +101,27 @@
         background-color: white; 
         color: black; 
         border: 2px solid slategray;
-        width: 33%;
         height:40px;
         font-size: 16px;
         font-family: Family-Guy;
         margin-bottom:2%;
         margin-left:5%;
+    box-shadow: 10px 10px 5px grey;
+
         display:block;
     }
     .buttonexport:hover {
       background-color: slategray;
+      transform: scale(1.2,1.2);
       color: white;
+    box-shadow: 5px 5px 5px grey;
+
+    }
+
+    
+    .butonIndividual{
+      width:25%;
+      margin:0 3% 3% 3%;
+      float: right;
+    
     }
