@@ -14,6 +14,7 @@ if(isset($_SESSION['id']))$id_user=$_SESSION['id'];
     <link href="../css/view-tournament-style.css" rel="stylesheet">
     <script type="text/javascript" src="../js/changeValue.js"></script>
     <script type="text/javascript" src="../js/getValue.js"></script>
+	<link rel = "stylesheet" type="text/css" href = "../css/incearca.css">
 
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -93,9 +94,80 @@ function changeValue(str,id_user,id_turneu){
 </div>
 <div class="chenar" id="demo">
   <div class="comment">
-  <?php
-  echo 'adelina';
-  ?>
+<form method="POST" action="createTurneu.php"> 
+<span style= "color:red">
+<?php
+  if (isset($_GET['error'])) {
+    echo $_GET['error'];
+  }
+?>
+</span>
+  <table>
+      <tr>
+        <td>Type</td>
+        <td>
+          <div>
+            <input id="boardgame_type" type="radio" value="board" name="type" onclick= "javascript:GetCategories('board')"> 
+            <label for="boardgame_type" >BoardGame </label>
+          </div>
+          <div>
+            <input id="onlinegame_type" type="radio" value="online" name="type" onclick= "javascript:GetCategories('online')">
+            <label for="onlinegame_type" >OnlineGame </label>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td> Category </td>
+        <td>
+          <!--this.value imi ia valuarea curenta-->
+          <select name="category" id ="game_categories" onchange="GetGames(this.value)">
+            <option value ="">selecteaza o categorie de joc</option> 
+          </select>
+        </td>
+      </tr>
+      <tr id="category_boardgames">
+        <td> Game </td>
+        <td>
+          <select name="game" id="game_names">
+            <option value ="">selecteaza numele jocului</option> 
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td> Titlu Turneu </td>
+        <td>
+          <input type="text" name="titlu" placeholder="Adauga un titlu">
+        </td>
+      </tr>
+      <tr>
+        <td> Numar Jucatori </td>
+        <td>
+          <input type="number" name="nr_jucatori" placeholder="Adauga un numar jucatori">
+        </td>
+      </tr>
+      <tr>
+        <td> Locatie Turneu </td>
+        <td>
+          <input type="text" name="locatie" placeholder="Adauga o locatie">
+        </td>
+      </tr>
+      <tr>
+        <td> Premiu </td>
+        <td>
+          <input type="number" name="premiu" placeholder="Adauga un premiu">
+        </td>
+      </tr>
+      <tr>
+        <td> Data turneu </td>
+        <td>
+          <input type="date" name="data_turneu">
+        </td>
+      </tr>
+
+    </table>
+    <button type="submit"> Creaza turneu </button>
+  </form>
+
   </div>
   <div class="comment ">
   <?php
@@ -230,6 +302,32 @@ function displayTab(slideIndex) {
         }
     
         ajaxRequest.open("GET","combattleajax2.php",true);
+        ajaxRequest.send();
+
+    }
+ function GetCategories(game_type){
+      var ajaxRequest= new XMLHttpRequest();
+        ajaxRequest.onreadystatechange = function(){
+            if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
+                var response = ajaxRequest.responseText;
+                document.getElementById("game_categories").innerHTML=response;
+            }
+        }
+        //pasez tipul
+        ajaxRequest.open("GET","gameCategoriesAjax.php?type="+game_type,true);
+        ajaxRequest.send();
+
+    }
+    function GetGames(game_category){
+      var ajaxRequest= new XMLHttpRequest();
+        ajaxRequest.onreadystatechange = function(){
+            if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
+                var response = ajaxRequest.responseText;
+                document.getElementById("game_names").innerHTML=response;
+            }
+        }
+        //pasez o categorie
+        ajaxRequest.open("GET","gameNamesAjax.php?category="+game_category,true);
         ajaxRequest.send();
 
     }

@@ -8,6 +8,7 @@
     <script type="text/javascript" src="../js/gettopjs.js"></script>
     <script type="text/javascript" src="../js/gamestypejs.js"></script>
     <script type="text/javascript" src="../js/getTopUsers.js"></script>
+    <link rel = "stylesheet" type="text/css" href = "../css/incearca.css">
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Game Manager </title>

@@ -12,6 +12,7 @@ include '../php/view.php';
     <link href="../css/modalStyle.css" rel="stylesheet">
     <link href="../css/statisticsStyle.css" rel="stylesheet">
     <link href="../css/paginacategorie.css" rel="stylesheet">
+    <link rel = "stylesheet" type="text/css" href = "../css/incearca.css">
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
