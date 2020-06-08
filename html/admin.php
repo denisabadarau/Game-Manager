@@ -31,8 +31,10 @@ if($nr<1)
     <script src="../js/deleteuserx.js"></script>
     <script src="../js/deletegame.js"></script>
     <script src="../js/deletegamex.js"></script>
-
-
+    <script src="../js/changegamecategoryxx.js"></script>
+    <script src="../js/changegamecategoryx.js"></script>
+    <script src="../js/changegamecategory.js"></script>
+    <script src="../js/test.js"></script>
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -57,10 +59,8 @@ if($nr<1)
           <option value="">--Please choose an action--</option>
           <option value="deleteuser">Delete user</option>
           <option value="giveadminuser">Give admin to user</option>
-          <option value="addnewgame">Add new game</option>
           <option value="deletegame">Delete game</option>
           <option value="changegametype">Change game type</option>
-          <option value="changegamecategory">Change game category</option>
 </select>
 </form>
 </div>
@@ -73,12 +73,10 @@ function rezolvare()
   deleteuser();
   if(x=="giveadminuser")
   giveadminuser();
-  if(x=="addnewgame")
-  alert(x);
-  if(x=="deletegame")deletegame();
+  if(x=="deletegame")
+  deletegame();
   if(x=="changegametype")
-  alert(x);
-  if(x=="changegamecategory")
-  alert(x);
+  changegamecategory();
+  
 }
 </script>
