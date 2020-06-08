@@ -11,6 +11,7 @@ session_start();
     <link href="../css/modalStyle.css" rel="stylesheet">
     <link href="../css/statisticsStyle.css" rel="stylesheet">
     <link href="../css/paginacategorie.css" rel="stylesheet">
+    <link rel = "stylesheet" type="text/css" href = "../css/incearca.css">
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -31,7 +32,7 @@ session_start();
 <div class="containerSelect">
 <form>
 <label>ACTION:</label>
-<select name="category" onchange="showType(this.value)">
+<select id="myselect" name="action" onchange="rezolvare()">
           <option value="">--Please choose an action--</option>
           <option value="deleteuser">Delete user</option>
           <option value="giveadminuser">Give admin to user</option>
@@ -42,3 +43,23 @@ session_start();
 </select>
 </form>
 </div>
+<p id="demo"></p>
+<script>
+
+function rezolvare()
+{
+  var x = document.getElementById("myselect").value;
+  if(x=="deleteuser")
+  //aici codam
+  if(x=="giveadminuser")
+  //codam
+  if(x=="addnewgame")
+  //codam
+  if(x=="deletegame")
+  //codam
+  if(x=="changegametype")
+  //codam
+  if(x=="changegamecategory")
+  //codam
+}
+</script>
