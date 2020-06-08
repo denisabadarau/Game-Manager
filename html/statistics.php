@@ -2,6 +2,8 @@
 include '../php/conectare.php';
 include '../php/view.php';
 include '../php/likefunctions.php';
+session_start();
+
 ?>
 <!DOCTYPE html>
     <html lang="en">
@@ -11,6 +13,7 @@ include '../php/likefunctions.php';
     <link href="../css/paginaJocuriStyle.css" rel="stylesheet">
     <link href="../css/modalStyle.css" rel="stylesheet">
     <link href="../css/statisticsStyle.css" rel="stylesheet">
+    <link rel = "stylesheet" type="text/css" href = "../css/incearca.css">
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
 

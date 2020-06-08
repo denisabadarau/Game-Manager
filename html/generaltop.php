@@ -1,5 +1,5 @@
 <?php
-require '../php/conectare.php';
+//require '../php/conectare.php';
 $conectare=deschideConexiunea();
 $sql="SELECT * FROM games ORDER BY likes DESC LIMIT 5";
 $result=$conectare->query($sql);
