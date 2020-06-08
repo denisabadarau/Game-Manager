@@ -28,7 +28,7 @@ return json_encode($types);
 function gamesViewsNoAfterViews($category)
 {
     $conectare=deschideConexiunea();
-    $sql="SELECT DISTINCT(type),views FROM games WHERE category='$category'";
+    $sql="SELECT DISTINCT(type),sum(views) as views FROM games WHERE category='$category' group by type";
     $result=$conectare->query($sql);
     $views=[];
     if ($result->num_rows > 0) {
