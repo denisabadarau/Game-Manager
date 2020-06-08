@@ -1,5 +1,17 @@
 <?php
+include '../php/conectare.php';
 session_start();
+$id=$_SESSION['id'];
+$db=deschideConexiunea();
+$sql="select count(*) as nr from admin where id='$id'";
+$result= $db->query($sql);
+$row = mysqli_fetch_assoc($result);
+$nr=$row['nr'];
+if($nr<1)
+{
+  echo '<h1>Nu aveti acces pe aceasta pagina </h1>';
+  exit();
+}
 ?>
 <!DOCTYPE html>
     <html lang="en">
@@ -11,6 +23,12 @@ session_start();
     <link href="../css/modalStyle.css" rel="stylesheet">
     <link href="../css/statisticsStyle.css" rel="stylesheet">
     <link href="../css/paginacategorie.css" rel="stylesheet">
+    <link href="../css/admin.css" rel="stylesheet">
+    <link rel = "stylesheet" type="text/css" href = "../css/incearca.css">
+    <script src="../js/giveadminuser.js"></script>
+    <script src="../js/giveadminuserx.js"></script>
+    <script src="../js/deleteuser.js"></script>
+    <script src="../js/deleteuserx.js"></script>
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -31,7 +49,7 @@ session_start();
 <div class="containerSelect">
 <form>
 <label>ACTION:</label>
-<select name="category" onchange="showType(this.value)">
+<select id="myselect" name="action" onchange="rezolvare()">
           <option value="">--Please choose an action--</option>
           <option value="deleteuser">Delete user</option>
           <option value="giveadminuser">Give admin to user</option>
@@ -42,3 +60,22 @@ session_start();
 </select>
 </form>
 </div>
+<div id="demo"> </div>
+<script>
+function rezolvare()
+{
+  var x = document.getElementById("myselect").value;
+  if(x=="deleteuser")
+  deleteuser();
+  if(x=="giveadminuser")
+  giveadminuser();
+  if(x=="addnewgame")
+  alert(x);
+  if(x=="deletegame")
+  alert(x);
+  if(x=="changegametype")
+  alert(x);
+  if(x=="changegamecategory")
+  alert(x);
+}
+</script>

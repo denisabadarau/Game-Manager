@@ -44,7 +44,7 @@ session_start();
   <div class="dropdown-content">
      <?php
       $db=deschideConexiunea();
-      $sql = "SELECT DISTINCT type FROM games WHERE category='online'";
+      $sql = "SELECT DISTINCT type FROM games WHERE category='board'";
       $result = $db->query($sql);
       if ($result->num_rows > 0){
         while($row = $result->fetch_assoc()) {
@@ -110,22 +110,6 @@ session_start();
     }
   }
 ?>
-    <div class="dropdown">
-  <button class="dropbtn">Select category</button>
-  <div class="dropdown-content">
-     <?php
-      $db=deschideConexiunea();
-      $sql = "SELECT DISTINCT type FROM games WHERE category='board'";
-      $result = $db->query($sql);
-      if ($result->num_rows > 0){
-        while($row = $result->fetch_assoc()) {
-        echo
-        '<a href="pagina-categorie.php?c='.$row['type'].'">'.$row['type'].'</a>';
-        }
-      }
-      ?>
-    </div>
-</div>
 <a href="https://www.facebook.com/vlad.afrasinei" class="fa fa-facebook"></a>
 <a href="https://twitter.com/explore" class="fa fa-twitter"></a>
 <a href="https://www.youtube.com/?gl=RO&hl=ro" class="fa fa-youtube"></a>
