@@ -1,5 +1,17 @@
 <?php
+include '../php/conectare.php';
 session_start();
+$id=$_SESSION['id'];
+$db=deschideConexiunea();
+$sql="select count(*) as nr from admin where id='$id'";
+$result= $db->query($sql);
+$row = mysqli_fetch_assoc($result);
+$nr=$row['nr'];
+if($nr<1)
+{
+  echo '<h1>Nu aveti acces pe aceasta pagina </h1>';
+  exit();
+}
 ?>
 <!DOCTYPE html>
     <html lang="en">
@@ -13,6 +25,8 @@ session_start();
     <link href="../css/paginacategorie.css" rel="stylesheet">
     <link href="../css/admin.css" rel="stylesheet">
     <link rel = "stylesheet" type="text/css" href = "../css/incearca.css">
+    <script src="../js/giveadminuser.js"></script>
+    <script src="../js/giveadminuserx.js"></script>
     <script src="../js/deleteuser.js"></script>
     <script src="../js/deleteuserx.js"></script>
     <script src="../js/deletegame.js"></script>
@@ -52,7 +66,6 @@ session_start();
 </div>
 <div id="demo"> </div>
 <script>
-
 function rezolvare()
 {
   var x = document.getElementById("myselect").value;
@@ -67,20 +80,5 @@ function rezolvare()
   alert(x);
   if(x=="changegamecategory")
   alert(x);
-}
-
-function giveadminuser()
-{
-  var ajaxRequest= new XMLHttpRequest();
-        ajaxRequest.onreadystatechange = function(){
-            if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
-                var response =ajaxRequest.responseText;
-                document.getElementById("demo").innerHTML=response;
-            }
-        }
-    
-        ajaxRequest.open("GET","giveadminuser.php",true);
-        ajaxRequest.send();
-
 }
 </script>

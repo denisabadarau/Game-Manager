@@ -1,6 +1,12 @@
 <html>
 <body>
 <table>
+<tr>
+<td>id</td>
+<td>username</td>
+<td>email</td>
+<td>option</td>
+</tr>
 <?php
 include '../php/conectare.php';
 $db=deschideconexiunea();
