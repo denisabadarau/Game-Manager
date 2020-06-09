@@ -55,7 +55,7 @@ session_start();
  </form>
 </div>
 <div class="butonIndividual">
- <form method="post"  >  
+ <form method="post"  action="exportdatadocbook.php">  
  <input type="submit" name="export" value="DOC BOOK FILE" class="buttonexport" />  
  </form>
 </div>

@@ -1,7 +1,7 @@
 <?php
-//session_start();
-require_once '../php/conectare.php';
-$conectare = deschideConexiunea();
+  //session_start();
+  require_once '../php/conectare.php';
+  $conectare = deschideConexiunea();
 ?>
 <head>
 <link href="../css/meniu-style.css" rel="stylesheet">

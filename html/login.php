@@ -1,4 +1,5 @@
 <?php
+//https://www.youtube.com/watch?v=Gcd5g_2cZCc&t=168s
 session_start();
 ?>
 
@@ -18,7 +19,8 @@ session_start();
         <div class= "login-box">
             <img src = "../images/logo11.png" class="logo">
             <h1>Login</h1>
-            <form method= "POST" action="login.inc.php">
+            
+            <form method="POST" action="login.inc.php">
                 <p>Username</p>
                 <input type="text" name="username" placeholder="Enter Username">
                 <p>Password</p>
