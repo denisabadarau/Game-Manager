@@ -55,7 +55,7 @@ session_start();
     </div>
 </div>
    
-   <p class="title">Most popular games</p>
+   <p class="titlelogo">Most popular games</p>
 
     <?php
   $db=deschideConexiunea();
