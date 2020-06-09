@@ -107,8 +107,8 @@ window.onclick = function(event) {
   }
 }
 </script>
-<a href="meniu.php"> <img src="../images/logomainalb.png"  style="width:300px;height:100px;margin-left:370px;"> </a>
-<p class="title">-Game Manager-</p>
+<a href="meniu.php"> <img src="../images/logomainalb.png" class="center"> </a>
+<p class="titlelogo">-Game Manager-</p>
         <ul>
           <li><a href="meniu.php">Home</a></li>
           <li><a href="boardgames.php">Board Games</a></li>
