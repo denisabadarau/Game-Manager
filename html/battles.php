@@ -6,23 +6,31 @@ session_start();
 <!DOCTYPE html>
     <html lang="en">
   <head>
+ 
+
+  <link href="../css/battles.css" rel="stylesheet">
+
+    <link href="../css/view-tournament-style.css" rel="stylesheet">
     <link href="../css/meniu-style.css" rel="stylesheet">
     <link href="../css/boardGamesStyle.css" rel="stylesheet">
+    <link href="../css/boardgames.css" rel="stylesheet">
     <link href="../css/modalStyle.css" rel="stylesheet">
     <link href="../css/statisticsStyle.css" rel="stylesheet">
-    <link href="../css/battles.css" rel="stylesheet">
-    <link href="../css/view-tournament-style.css" rel="stylesheet">
+    <link href="../css/paginacategorie.css" rel="stylesheet">
+    <link rel = "stylesheet" type="text/css" href = "../css/incearca.css">
     <script type="text/javascript" src="../js/changeValue.js"></script>
     <script type="text/javascript" src="../js/getValue.js"></script>
-    <link rel = "stylesheet" type="text/css" href = "../css/incearca.css">
+    
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title> Game Manager </title>
+    
 </head>
-<body>
 <script>
 function getValuePlayers(id_turneu){
     //alert("m am apelat");
@@ -185,10 +193,7 @@ function GetCategories(game_type){
 </script>
 
 
-    <div class="logout-box">  
-      <input type="submit" name="submit" value="Logout">
-      <a href = "logout.inc.php"></a>
-    </div>
+<body>
 
     <?php
     include 'menu.php';

@@ -3,14 +3,17 @@
 require_once '../php/conectare.php';
 $conectare = deschideConexiunea();
 ?>
+<head>
+<link href="../css/meniu-style.css" rel="stylesheet">
 
+</head>
 <div class="split left">
     </div>
     <div class="split right">
     </div>
-    <!-- Trigger/Open The Modal -->
-    <button id="myBtn">Open Modal</button>
+    
 
+    
     <!-- The Modal -->
     <div id="myModal" class="modal">
     <?php   

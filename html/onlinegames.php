@@ -20,15 +20,14 @@ session_start();
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title> Game Manager </title>
 <input type="button" class="buttonFeatures" style="margin-left:90%" value="AdminPage" onclick="location.href='admin.php'">
+    <!-- Trigger/Open The Modal -->
+    <input type="button" class="buttonFeatures" id="myBtn"  style="margin-left:90%" value="My Account">
+<input type="button" class="buttonFeatures" style="margin-left:90%" value="Documentation" onclick="location.href='logout.inc.php'">
+<input type="button" class="buttonFeatures" style="margin-left:91%" value="Logout" onclick="location.href='logout.inc.php'">
+
 </head>
 <body>
 
-
-
-    <div class="logout-box">  
-      <input type="submit" name="submit" value="Logout">
-      <a href = "logout.inc.php"></a>
-    </div>
 
 
 

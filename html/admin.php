@@ -40,6 +40,11 @@ if($nr<1)
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title> Game Manager </title>
 <input type="button" class="buttonFeatures" style="margin-left:90%" value="AdminPage" onclick="location.href='admin.php'">
+    <!-- Trigger/Open The Modal -->
+    <input type="button" class="buttonFeatures" id="myBtn"  style="margin-left:90%" value="My Account">
+<input type="button" class="buttonFeatures" style="margin-left:90%" value="Documentation" onclick="location.href='logout.inc.php'">
+<input type="button" class="buttonFeatures" style="margin-left:91%" value="Logout" onclick="location.href='logout.inc.php'">
+
 </head>
 <body>
     <?php
@@ -52,6 +57,7 @@ if($nr<1)
             </div> 
         </div>
 <p class="title" style="margin-top:5%">Aceasta este o pagina de administrat site-ul</p>
+
 <div class="containerSelect">
 <form>
 <label>ACTION:</label>
