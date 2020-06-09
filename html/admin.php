@@ -56,7 +56,7 @@ if($nr<1)
               <div class="textMiddle">AdminPage</div>    
             </div> 
         </div>
-<p class="title" style="margin-top:5%">Aceasta este o pagina de administrat site-ul</p>
+<p class="titlelogo" style="margin-top:5%">Aceasta este o pagina de administrat site-ul</p>
 
 <div class="containerSelect">
 <form>
