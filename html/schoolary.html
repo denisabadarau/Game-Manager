@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>
+          Schoolary HTML
+        </title>
+        <meta charset="UTF-8">
+      </head>
+      
+      <body>
+        <header>
+            <h1 style="text-align: center">Game Web Manager</h1>
+        </header>
+      
+<section>
+    <h1>Autori</h1>
+    <h3>Afrasinei Vlad Marian</h3>
+    <ul>
+        <li>Numar telefon: 0754089689</li>
+        <li><a href="https://www.facebook.com/vlad.afrasinei">Afrasinei Vlad facebook</a> </li>
+    </ul>
+    <h3>Badarau Denisa Ionela</h3>
+    <ul>
+        <li>Numar telefon: 0751368750</li>
+        <li><a href="https://www.facebook.com/denisa.ionela.52">Badarau Denisa facebook</a> </li>
+    </ul>
+    <h3>Mihai Adelina Alicia</h3>
+    <ul>
+        <li>Numar telefon: 0749315309</li>
+        <li><a href="https://www.facebook.com/alicia.mihai">Mihai Adelina facebook</a> </li>
+    </ul>
+    <h3>Sursa cod</h3>
+    <dd><a href="https://github.com/denisabadarau/Game-Manager">Sursa GIT Principala</a></dd>
+    <dd><a href="https://github.com/denisabadarau/proiect-tw">Sursa GIT secundara1</a></dd>
+    <dd><a href="https://github.com/denisabadarau/Tehnologii-Web">Sursa GIT secundara2</a></dd>
+    
+</section>
+
+<section>
+    <h1>GaMa (Game Web Manager) [B]</h1>
+    <h2>Cerinta proiectului:</h2>
+    <p>Sa se conceapa o aplicatie Web care inventariaza (colectii de) jocuri clasice (fizice) si digitale (electronice), inclusiv realizeaza managementul (meta-)datelor aferente: categorie, dimensiuni, imagini, destinatari – copii mici, (pre)scolari, adolescenti, adulti, persoane cu nevoi speciale –, reguli, restrictii (e.g., necesita platforma P, se bazeaza exclusiv pe interactiune vocala) si altele. Sistemul va oferi suport pentru activitati de organizare de campionate vizand diverse jocuri, plus administrarea utilizatorilor. Se vor genera statistici diverse ce pot fi exportate in formate deschise – minimal, CSV, DocBook si PDF. Se va realiza, de asemenea, un clasament al celor mai populare jocuri si grupuri de jucatori, disponibil si ca flux de date RSS.</p>
+</section>
+
+<section>
+    <h3><b>Etapele dezvoltarii proiectului</b></h3>
+    1. Design/Arhitectura proiect<br>
+    2. Creare pagini front-end <br>
+    3. Creare baza de date si tabele<br>
+    4. Popularea lor<br>
+    5. Implementare scripturi PHP back-end<br>
+    6. Adaugare functionalitati AJAX si JavaScript<br>
+    7. Verificare SQL INJECTION<br>
+    8. Testing<br>
+  </section>
+
+<section>
+    <h2>Functionalitatile implementate ale fiecarei persoane(In mare)</h2>
+    <br>
+    <h3>Afrasinei Vlad Marian</h3>
+    1.Crearea template-ul paginilor(split-urile, meniul, logo-ul cu titlul,icon-urile de socializare)<br>
+    2.Pagina Board games<br>
+    3.Pagina Online games<br>
+    4.Pagina categorie dinamica<br>
+    5.Pagina statistica(export dateCSV, statistica pe like-uri)<br>
+    6.Pagina battle(Cele 3 butoane care se schimba dinamic, implementarea ViewComment&Add Comment)<br>
+    7.Pagina AdminPage(Seleect, Delete User,Change Admin user si ChangeGameType)<br>
+    8.Responsive<br>
+    9.Creare baze de date, tabele plus inserari.<br>
+    10.Creare documentatie<br>
+    <h3>Badarau Denisa Ionela</h3>
+    1.Pagina de home
+    2.La pagina de categorie, sistem like/dislike <br>
+    3.Pagina joc dinamica+implementare view joc<br>
+    4.Pagina statistica(export datePDF, statistica pe view-uri si select)<br>
+    5.Pagina battle(implementare view tournaments+sistem join/unjoin)<br>
+    6.Pagina TOP<br>
+    7.Pagina AdminPage(delete game, ChangeGameType)<br>
+    8.Responsive
+    9.Creare baza de date, tabele plus inserari<br>
+    10.Creare documentatie<br>
+    <h3>Mihai Adelina Alicia</h3>
+    1.Pagina register<br>
+    2.Pagina login<br>
+    3.Pagina MyAccount<br>
+    4.Buton si implementare Logout<br>
+    5.Pagina battle(Implementare Create a tournament)<br>
+    6.Pagina statistica(exportDocBook)<br>
+    7.Responsive<br>
+    8.Creare baza de date, tabele plus inserari<br>
+    9.Creare documentatie<br>
+    10.SQL INJECTION<br>
+</section>
+<section>
+    <h2>Ghid de utilizare</h2>
+    1.Pentru inceput utilizatorul trebuie sa se inregistreze. Daca un camp nu este completat va primi o eroare.
+Apoi se verifica daca email-ul este valid fiind rezolvate la imput si sql injection pentru ca o persoana care se logheaza sa nu poata
+patrunde in interiorul aplicatiei. Nu se pot creea mai multe conturi cu acelasi username, dar cu acelasi email da. Dupa inregistrare
+se va directiona catre pagina de login. <br>
+    2.In pagina de login se verifica daca pe acelasi id se gaseste acelasi username si password. In caz negativ se afiseaza mesajul
+parola gresita si aveti posibilitate de logare din nou, iar in caz pozitiv sunteti trimisi pe pagina de home a site-ului.<br>
+    3.In pagina home, se gaseste meniul care in functie de dorinta te duce pe pagina aleasa cu functionalitatea ei. Pe aceasta pagina
+sunt prezentate principalele functionalitati ale site-ului si la final iconite spre platformele de socializare a creatorilor.<br>
+    4.In pagina board game se gaseste un carusel cu fiecare tip din aceasta categorie, o mica descriere si un link la ele. De asemenea
+de pe ea aveti posibilitatea sa alegeti un tip anume din aceasta categorie, si tot pe ea sunt afisate cele mai populare 9 jocuri in functie de like-uri.<br>
+    5.Pagina online game este asemanatoare cu cea board game, avand acelasi template, doar ca diferenta continutul
+fiind dinamic, schimbandu-se in functie de dorinta.
+    6.Fiecare select de trimite pe o pagina categorie dinamica, unde vor fi afisate toate jocurile din acea categorie si tip,
+ numarul de like-uri si o mica descriere. La un click pe poza se duce o pagina dinamica a jocului unde sunt date mai multe informatii
+ si unde sunt verificate numarul de view-uri.<br>
+    7.Pe pagina de statistica, putem exporta datele in format(csv,pdf,docbook) si de asemenea pot fi vazute si live, pe diferite
+chart-uri, in functie de view-uri sau like-uri. <br>
+    8.Pe pagina de battle se poate crea un turneu(fiecare utilizator poate crea un numar nelimitat de turnee). Trebuie sa aleaga intre Cele
+2 categorii, in functie de categorie se poate alege un tip de joc(sunt luate dinamic din baza de date), se va alege un nume a turneului
+, numarul de jucatori care pot participa, locatia turneului, premiul si data cand va avea loc. In cazul in care nu este completat
+un camp se va afisa un mesaj de eroare si vi se permite sa creati alt turneu. La view tournament se afla toate turnele create. 
+In caz ca au avut loc deja au statusul FINISHED, iar daca sunt ACTIVE, fiecare are un buton de JOIN/UNJOIN. La view comments se pot
+vedea comentariile si adauga comentarii noi, care sunt afisate instant, fara refresh. Toate aceste 3 functionalitati sunt facute prin ajax.<br>
+    9.Pe pagina de top, se afla 3 selecturi(facute prin ajax) care in functie de dorinte afiseaza topul jocurilor pe views sau like-uri.
+Exista si un buton pentru top de useri(Face topul celor mai activi useri, adica care au participat sau creat cele mai multe turnee). 
+Aici se gaseste si butonul RSS care genereaza topul in format rss.<br>
+    10.Pe fiecare pagina se gasesc 4 butoane.
+    <ul>
+    <li>Butonul de Logout, care te deconecteaza</li>
+    <li>Butonul de Documentation, care duce la pagina care contine aceasta documentatie</li>
+    <li>Butonul de MyAccount, unde se poate pune(sau modifica) o poza, o descriere si unde se pot vedea turnele utilizatorului. Aceste raman salvate si in caz de deconectare</li>
+    <li>Pagina de Admin, care poate fi vazuta doar in caz contul este de tip admin, in caz contrar spune ca nu avem acces la aceasta pagina. Aici putem sterge un
+utilizator, putem face un utilizator normal admin, putem sterge un joc si putem schimba tipul unui joc. Toate aceste sunt lucrate prin ajax.
+    </li>
+    </ul>
+</section>
+<section>
+    <h2>Tehnologii utilizate</h2>
+    <ul>
+        <li><a href="https://en.wikipedia.org/wiki/HTML" target="_blank">HTML5 </a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank">CSS</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">Javascript</a></li>
+        <li> <a href="https://www.php.net/" target="_blank">PHP</a></li>
+        <li> <a href="https://www.mysql.com/" target="_blank">MySQL</a></li>
+        <li><a href="https://www.w3schools.com/xml/ajax_intro.asp" target="_blank">AJAX</a></li>
+    </ul>
+</section>
+<section>
+        <h2>Servicii folosite:</h2>
+        <ul>
+         <li><a href="https://github.com/" target="_blank">Github</a></li>
+         <li><a href="https://www.apachefriends.org/" target="_blank">XAMPP</a></li>
+        </ul>
+</section>
+<section>
+    <h2>Bibliografie</h2>
+    <ul>
+    <li><a href="https://www.w3schools.com/" target="_blank">https://www.w3schools.com</a><br></li>
+    <li><a href="https://www.tutorialspoint.com/php/index.htm" target="_blank">https://www.tutorialspoint.com/php/index.htm</a></li>
+    <li><a href="https://stackoverflow.com/" target="_blank">https://stackoverflow.com/</a></li>
+    </ul>
+</section>
