@@ -18,7 +18,7 @@ session_start();
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Game Manager </title>
-    <<input type="button" class="buttonFeatures" style="margin-left:90%" value="AdminPage" onclick="location.href='admin.php'">
+    <input type="button" class="buttonFeatures" style="margin-left:90%" value="AdminPage" onclick="location.href='admin.php'">
     <!-- Trigger/Open The Modal -->
     <input type="button" class="buttonFeatures" id="myBtn"  style="margin-left:90%" value="My Account">
 <input type="button" class="buttonFeatures" style="margin-left:90%" value="Documentation" onclick="location.href='logout.inc.php'">
