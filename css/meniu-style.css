@@ -34,8 +34,7 @@
         float: left;
         margin: 0 1.15em;
     }
-    li a,
-    .dropbtn {
+    li a{
         display: inline-block;
         color: white;
         text-align: center;
@@ -43,34 +42,26 @@
         padding: 20px 20px 20px 20px;
         text-decoration: none;
     }
-    li a:hover,
-    .dropdown:hover .dropbtn {
+    li a:hover{
         background-color: black;
     }
-    li.dropdown {
-        display: inline-block;
-    }
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #333;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        font-family: Family-Guy;
-    }
-    .dropdown-content a {
-        color: white;
-        display: block;
-        text-align: center;
-    }
-    .dropdown-content a:hover {
-        background-color: #f1f1f1;
-        color:black;
-    }
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
 
+    @media screen and (max-width: 1511px) {
+        li a{
+        padding: 5px 5px 5px 5px;
+         
+        }
+      }
+
+      @media screen and (max-width: 1251px) {
+        li a{
+        padding: 0px;
+         
+        }
+      }
+
+     
+   
     p.title {
         font-family: Family-Guy;
         font-size: 20px;
@@ -393,6 +384,8 @@ divanimation {
     font-family: Family-Guy;
     padding: 0px 20px 10px 10px;
   }
+
+  
   .infoColumnFour{
     font-family: Chunk Five Print;
     font-size: 15px;
@@ -484,6 +477,48 @@ divanimation {
     background-color: #e2e2d0;
 }
 
+@media screen and (min-width: 1800px) {
+    .titleColumnFour{
+        font-size: 15px;
+    }
+    .buttonFeatures {
+    font-size: 14px;
+    }
+    
+  }
 
+  @media screen and (max-width: 1390px) {
+    .columnFOUR{
+        width: 40%;
+    }
+    .titleColumnFour{
+        font-size: 15px;
+    }
+    
+  }
+
+@media screen and (min-width: 1670px) {
+    
+    .columnTWO{
+        width:20%
+    }
+  }
+
+  @media screen and (min-width: 2435px) {
+    
+    .columnTWO{
+        width: 25%;
+    height: 700px;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    .columnTWO{
+        width: 50%;
+    height: 600px;
+    padding: 10px;
+    margin: 20%;
+    }
+    
+  }
 
 
