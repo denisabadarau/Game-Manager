@@ -9,8 +9,8 @@ $conectare = deschideConexiunea();
 
 if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['password']) && !empty($_POST['password'] )) {
     
-    $username = strtolower($_POST['username']);
-    $password = $_POST['password'];
+    $username = mysqli_real_escape_string($conectare,strtolower($_POST['username']));
+    $password = mysqli_real_escape_string($conectare, $_POST['password']);
 
     //Extragem cu o variabila sql parola din baza de date
     $sql = "SELECT * FROM user WHERE username = '$username'";
